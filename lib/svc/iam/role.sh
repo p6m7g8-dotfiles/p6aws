@@ -13,7 +13,7 @@ p6_aws_svc_iam_role_policies() {
 
 	p6_aws_cli_cmd iam list-attached-role-policies \
 		--output text \
-		--role-name $role_name \
+		--role-name "$role_name" \
 		--query "'AttachedPolicies[].[PolicyName]'"
 }
 

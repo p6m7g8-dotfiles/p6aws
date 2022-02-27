@@ -21,7 +21,7 @@ p6_aws_svc_lambda_functions_list() {
 ######################################################################
 p6_aws_svc_lambda_functions_runtimes() {
 
-    p6_aws_svc_lambda_list |
+    p6_aws_svc_lambda_functions_list |
         awk '{ print $4 }' |
         sort |
         uniq -c |
