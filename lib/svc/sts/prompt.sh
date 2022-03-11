@@ -27,7 +27,7 @@ p6_aws_sts_prompt_info() {
     elif p6_math_gt "$diff" "3500"; then
       str=$(p6_color_ize "yellow" "black" "sts:\t$diff")
     else
-      str="sts:\t$diff"
+      str="sts:\t  $diff"
     fi
 
   fi
