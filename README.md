@@ -416,6 +416,17 @@
 - p6_aws_svc_organizations_sts_su_un()
 
 
+### svc/route53domains:
+
+#### svc/route53domains/domain.sh:
+
+- p6_aws_svc_route53_domains_details(domain_name, ...)
+- p6_aws_svc_route53_domains_list()
+- p6_aws_svc_route53_domains_list_locked()
+- p6_aws_svc_route53_domains_list_not_autorenew()
+- p6_aws_svc_route53_domains_nameservers(domain_name)
+
+
 ### svc/s3:
 
 #### svc/s3/bucket.sh:
@@ -588,6 +599,8 @@
 │   │   ├── account.sh
 │   │   ├── lz.sh
 │   │   └── sts.sh
+│   ├── route53domains
+│   │   └── domain.sh
 │   ├── s3
 │   │   └── bucket.sh
 │   ├── s3api
@@ -611,7 +624,7 @@
     ├── p6_return.sh
     └── template.sh
 
-29 directories, 68 files
+30 directories, 69 files
 ```
 ## Author
 
