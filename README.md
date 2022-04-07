@@ -424,7 +424,9 @@
 - p6_aws_svc_route53_domains_list()
 - p6_aws_svc_route53_domains_list_locked()
 - p6_aws_svc_route53_domains_list_not_autorenew()
-- p6_aws_svc_route53_domains_nameservers(domain_name)
+- p6_aws_svc_route53_domains_nameservers_api(domain_name)
+- p6_aws_svc_route53_domains_nameservers_delta(domain_name)
+- p6_aws_svc_route53_domains_nameservers_whois(domain_name)
 
 
 ### svc/s3:
