@@ -6,7 +6,7 @@
 #
 #>
 #/ Synopsis:
-#/   This command runs only in the us-east-1 Region. If your default  region
+#/   This command runs only in the us-east-1 Region. If your default region
 #/   is set to us-east-1, you can omit the region parameter.
 #/
 ######################################################################
@@ -46,7 +46,7 @@ p6_aws_svc_route53_domains_list_not_autorenew() {
 #
 #  Args:
 #	domain_name -
-#	... - 
+#	... -
 #
 #>
 ######################################################################
@@ -60,15 +60,51 @@ p6_aws_svc_route53_domains_details() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_route53_domains_nameservers(domain_name)
+# Function: p6_aws_svc_route53_domains_nameservers_api(domain_name)
 #
 #  Args:
 #	domain_name -
 #
 #>
 ######################################################################
-p6_aws_svc_route53_domains_nameservers() {
+p6_aws_svc_route53_domains_nameservers_api() {
     local domain_name="$1"
 
-    p6_aws_svc_route53_domains_details "$domain_name" --output text --query "'Nameservers'"
+    p6_aws_svc_route53_domains_details "$domain_name" --region us-east-1 --output text --query "'Nameservers'" | tr 'A-Z' 'a-z' | sort -u
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_route53_domains_nameservers_whois(domain_name)
+#
+#  Args:
+#	domain_name -
+#
+#>
+######################################################################
+p6_aws_svc_route53_domains_nameservers_whois() {
+    local domain_name="$1"
+
+    whois "$domain_name" | awk -F: '/Name Server/ {print $2}' | dos2unix | sed -e 's, *,,g' | tr 'A-Z' 'a-z' | sort -u
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_route53_domains_nameservers_delta(domain_name)
+#
+#  Args:
+#	domain_name -
+#
+#>
+######################################################################
+p6_aws_svc_route53_domains_nameservers_delta() {
+    local domain_name="$1"
+
+    p6_aws_svc_route53_domains_nameservers_api "$domain_name" >/tmp/p6-1
+    p6_aws_svc_route53_domains_nameservers_whois "$domain_name" >/tmp/p6-2
+
+    diff -u /tmp/p6-1 /tmp/p6-2
+    rm -f /tmp/p6-1 /tmp/p6-2
 }
