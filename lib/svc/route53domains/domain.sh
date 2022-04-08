@@ -22,7 +22,7 @@ p6_aws_svc_route53_domains_list() {
 #
 #>
 ######################################################################
-p6_aws_svc_route53_domains_list_locked() {
+p6_aws_svc_route53_domains_list_not_locked() {
 
     p6_aws_svc_route53_domains_list | awk '$3 == "False"'
 }
