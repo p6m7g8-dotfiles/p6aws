@@ -18,7 +18,7 @@ p6_aws_svc_route53_domains_list() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_route53_domains_list_locked()
+# Function: p6_aws_svc_route53_domains_list_not_locked()
 #
 #>
 ######################################################################
@@ -46,7 +46,7 @@ p6_aws_svc_route53_domains_list_not_autorenew() {
 #
 #  Args:
 #	domain_name -
-#	... -
+#	... - 
 #
 #>
 ######################################################################
