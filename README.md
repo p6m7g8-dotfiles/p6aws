@@ -418,8 +418,13 @@
 
 ### svc/route53:
 
+#### svc/route53/resources.sh:
+
+- p6_aws_svc_route53_resources_list(zone)
+
 #### svc/route53/zones.sh:
 
+- p6_aws_svc_route53_zones_hosted_id_from_zone(zone)
 - p6_aws_svc_route53_zones_hosted_list()
 
 
@@ -609,6 +614,7 @@
 │   │   ├── lz.sh
 │   │   └── sts.sh
 │   ├── route53
+│   │   ├── resources.sh
 │   │   └── zones.sh
 │   ├── route53domains
 │   │   └── domain.sh
@@ -635,7 +641,7 @@
     ├── p6_return.sh
     └── template.sh
 
-31 directories, 70 files
+31 directories, 71 files
 ```
 ## Author
 
