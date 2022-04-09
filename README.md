@@ -416,6 +416,13 @@
 - p6_aws_svc_organizations_sts_su_un()
 
 
+### svc/route53:
+
+#### svc/route53/zones.sh:
+
+- p6_aws_svc_route53_zones_hosted_list()
+
+
 ### svc/route53domains:
 
 #### svc/route53domains/domain.sh:
@@ -601,6 +608,8 @@
 │   │   ├── account.sh
 │   │   ├── lz.sh
 │   │   └── sts.sh
+│   ├── route53
+│   │   └── zones.sh
 │   ├── route53domains
 │   │   └── domain.sh
 │   ├── s3
@@ -626,7 +635,7 @@
     ├── p6_return.sh
     └── template.sh
 
-30 directories, 69 files
+31 directories, 70 files
 ```
 ## Author
 
