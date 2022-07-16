@@ -21,6 +21,7 @@ p6df::modules::p6aws::deps() {
 #>
 ######################################################################
 p6df::modules::p6aws::init() {
+  local dir="$1"
 
-  p6_bootstrap "$__p6_dir"
+  p6_bootstrap "$dir"
 }
