@@ -6,6 +6,7 @@
 #  Args:
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_network_int_list() {

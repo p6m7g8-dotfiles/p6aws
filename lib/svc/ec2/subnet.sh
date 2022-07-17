@@ -7,6 +7,7 @@
 #	subnet_type -
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_subnet_get() {
@@ -31,6 +32,7 @@ p6_aws_svc_ec2_subnet_get() {
 #  Returns:
 #	words - subnet_ids
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_subnet_ids_get() {
@@ -51,6 +53,7 @@ p6_aws_svc_ec2_subnet_ids_get() {
 #  Args:
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_subnets_list() {

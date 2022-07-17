@@ -45,7 +45,7 @@
 #### p6aws/init.zsh:
 
 - p6df::modules::p6aws::deps()
-- p6df::modules::p6aws::init()
+- p6df::modules::p6aws::init(module, dir)
 
 
 ### cfg:
@@ -341,6 +341,29 @@
 - p6_aws_svc_alb_listeners_list(load_balancer_name)
 
 
+### svc/glue:
+
+#### svc/glue/crawlers.sh:
+
+- p6_aws_svc_glue_crawlers_arn_list()
+
+#### svc/glue/database.sh:
+
+- p6_aws_svc_glue_databases_arn_list()
+
+#### svc/glue/endpoint.sh:
+
+- p6_aws_svc_glue_crawlers_arn_list()
+
+#### svc/glue/job.sh:
+
+- p6_aws_svc_glue_job_arn_list()
+
+#### svc/glue/table.sh:
+
+- p6_aws_svc_glue_tables_arn_list()
+
+
 ### svc/iam:
 
 #### svc/iam/alias.sh:
@@ -398,6 +421,13 @@
 - p6_aws_svc_lambda_functions_runtimes()
 
 
+### svc/mwaa:
+
+#### svc/mwaa/env.sh:
+
+- p6_aws_svc_mwaa_environments_arn_list()
+
+
 ### svc/organizations:
 
 #### svc/organizations/account.sh:
@@ -414,6 +444,13 @@
 - p6_aws_svc_organizations_sts_run_as(account_name_or_account_id, ...)
 - p6_aws_svc_organizations_sts_su(account_name_or_account_id)
 - p6_aws_svc_organizations_sts_su_un()
+
+
+### svc/rds:
+
+#### svc/rds/instance.sh:
+
+- p6_aws_svc_rds_instance_arns_list()
 
 
 ### svc/route53:
@@ -597,6 +634,12 @@
 │   │   └── main.sh
 │   ├── elbv2
 │   │   └── main.sh
+│   ├── glue
+│   │   ├── crawlers.sh
+│   │   ├── database.sh
+│   │   ├── endpoint.sh
+│   │   ├── job.sh
+│   │   └── table.sh
 │   ├── iam
 │   │   ├── alias.sh
 │   │   ├── instance.sh
@@ -609,10 +652,14 @@
 │   │   └── key.sh
 │   ├── lambda
 │   │   └── function.sh
+│   ├── mwaa
+│   │   └── env.sh
 │   ├── organizations
 │   │   ├── account.sh
 │   │   ├── lz.sh
 │   │   └── sts.sh
+│   ├── rds
+│   │   └── instance.sh
 │   ├── route53
 │   │   ├── resources.sh
 │   │   └── zones.sh
@@ -641,7 +688,7 @@
     ├── p6_return.sh
     └── template.sh
 
-31 directories, 71 files
+34 directories, 78 files
 ```
 ## Author
 

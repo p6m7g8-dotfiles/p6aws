@@ -9,6 +9,7 @@
 #  Returns:
 #	str - cluster_status
 #
+#  Environment:	 AWS_EKS_CLUSTER_NAME
 #>
 ######################################################################
 p6_aws_svc_eks_cluster_status() {

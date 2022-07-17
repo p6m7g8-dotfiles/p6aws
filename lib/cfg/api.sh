@@ -65,6 +65,7 @@ p6_aws_cfg_realize() {
 #
 # Function: p6_aws_cfg_show()
 #
+#  Environment:	 AWS_
 #>
 ######################################################################
 p6_aws_cfg_show() {
@@ -79,6 +80,7 @@ p6_aws_cfg_show() {
 #
 # Function: p6_aws_cfg_reset()
 #
+#  Environment:	 AWS_PAGER
 #>
 ######################################################################
 p6_aws_cfg_reset() {
@@ -99,6 +101,7 @@ p6_aws_cfg_reset() {
 #
 # Function: p6_aws_cfg_clear()
 #
+#  Environment:	 AWS_PAGER
 #>
 ######################################################################
 p6_aws_cfg_clear() {

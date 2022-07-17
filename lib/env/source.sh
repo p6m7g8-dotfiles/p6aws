@@ -9,6 +9,7 @@
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_CA_BUNDLE_
 #>
 ######################################################################
 p6_aws_env_ca_bundle_source() {
@@ -33,6 +34,7 @@ p6_aws_env_ca_bundle_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_METADATA_SERVICE_TIMEOUT_
 #>
 ######################################################################
 p6_aws_env_metadata_service_timeout_source() {
@@ -57,6 +59,7 @@ p6_aws_env_metadata_service_timeout_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_METADATA_SERVICE_NUM_ATTEMPTS_
 #>
 ######################################################################
 p6_aws_env_metadata_service_num_attempts_source() {
@@ -81,6 +84,7 @@ p6_aws_env_metadata_service_num_attempts_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_OUTPUT_
 #>
 ######################################################################
 p6_aws_env_output_source() {
@@ -105,6 +109,7 @@ p6_aws_env_output_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_ORG_
 #>
 ######################################################################
 p6_aws_env_org_source() {
@@ -129,6 +134,7 @@ p6_aws_env_org_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_DEFAULT_PROFILE_
 #>
 ######################################################################
 p6_aws_env_default_profile_source() {
@@ -153,6 +159,7 @@ p6_aws_env_default_profile_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_DEFAULT_REGION_
 #>
 ######################################################################
 p6_aws_env_default_region_source() {
@@ -177,6 +184,7 @@ p6_aws_env_default_region_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_VPC_ID_
 #>
 ######################################################################
 p6_aws_env_vpc_id_source() {
@@ -201,6 +209,7 @@ p6_aws_env_vpc_id_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_ENV_TAG_
 #>
 ######################################################################
 p6_aws_env_env_tag_source() {
@@ -225,6 +234,7 @@ p6_aws_env_env_tag_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_ENV_
 #>
 ######################################################################
 p6_aws_env_env_source() {
@@ -249,6 +259,7 @@ p6_aws_env_env_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_PROFILE_
 #>
 ######################################################################
 p6_aws_env_profile_source() {
@@ -273,6 +284,7 @@ p6_aws_env_profile_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_CONFIG_FILE_
 #>
 ######################################################################
 p6_aws_env_config_file_source() {
@@ -297,6 +309,7 @@ p6_aws_env_config_file_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_SHARED_CREDENTIALS_FILE_
 #>
 ######################################################################
 p6_aws_env_shared_credentials_file_source() {
@@ -321,6 +334,7 @@ p6_aws_env_shared_credentials_file_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_SESSION_TOKEN_
 #>
 ######################################################################
 p6_aws_env_session_token_source() {
@@ -345,6 +359,7 @@ p6_aws_env_session_token_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_ACCESS_KEY_ID_
 #>
 ######################################################################
 p6_aws_env_access_key_id_source() {
@@ -369,6 +384,7 @@ p6_aws_env_access_key_id_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_SECRET_ACCESS_KEY_
 #>
 ######################################################################
 p6_aws_env_secret_access_key_source() {
@@ -393,6 +409,7 @@ p6_aws_env_secret_access_key_source() {
 #  Returns:
 #	str - old
 #
+#  Environment:	 AWS_REGION_
 #>
 ######################################################################
 p6_aws_env_region_source() {

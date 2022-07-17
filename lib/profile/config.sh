@@ -5,6 +5,7 @@
 #
 # Function: p6_aws_profile_config_add()
 #
+#  Environment:	 PROFILE
 #>
 ######################################################################
 p6_aws_profile_config_add() {

@@ -7,6 +7,7 @@
 #	account_id -
 #	provider -
 #
+#  Environment:	 ACCOUNT_ID PROVIDER
 #>
 ######################################################################
 p6_aws_svc_iam_policy_saml() {
@@ -27,6 +28,7 @@ p6_aws_svc_iam_policy_saml() {
 #	trail_bucket -
 #	account_id -
 #
+#  Environment:	 ACCOUNT_ID TRAIL_BUCKET
 #>
 ######################################################################
 p6_aws_svc_iam_policy_s3_cloudtrail_write() {
@@ -46,6 +48,7 @@ p6_aws_svc_iam_policy_s3_cloudtrail_write() {
 #  Args:
 #	resource -
 #
+#  Environment:	 RESOURCE
 #>
 ######################################################################
 p6_aws_svc_iam_policy_cloudtrail_write() {
@@ -63,6 +66,7 @@ p6_aws_svc_iam_policy_cloudtrail_write() {
 #  Args:
 #	service -
 #
+#  Environment:	 SERVICE
 #>
 ######################################################################
 p6_aws_svc_iam_policy_service_write() {

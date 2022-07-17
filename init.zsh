@@ -3,7 +3,6 @@
 #
 # Function: p6df::modules::p6aws::deps()
 #
-#  Depends:	 p6_bootstrap
 #>
 ######################################################################
 p6df::modules::p6aws::deps() { 
@@ -14,14 +13,17 @@ p6df::modules::p6aws::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::p6aws::init()
+# Function: p6df::modules::p6aws::init(module, dir)
 #
-#  Depends:	 p6_bootstrap
-#  Environment:	 P6_DFZ_SRC_DIR
+#  Args:
+#	module -
+#	dir -
+#
 #>
 ######################################################################
 p6df::modules::p6aws::init() {
-  local dir="$1"
+  local module="$1"
+  local dir="$2"
 
   p6_bootstrap "$dir"
 }

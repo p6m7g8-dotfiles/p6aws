@@ -6,6 +6,7 @@
 #  Args:
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_rtbs_list() {
@@ -37,6 +38,7 @@ p6_aws_svc_ec2_rtbs_list() {
 #	rtb_id -
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_rtb_show() {

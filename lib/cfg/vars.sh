@@ -6,6 +6,7 @@
 #  Returns:
 #	words - env_vars
 #
+#  Environment:	 AWS_DEFAULT_PROFILE AWS_DEFAULT_REGION AWS_ORG
 #>
 ######################################################################
 p6_aws_cfg_vars_min() {
@@ -26,6 +27,7 @@ p6_aws_cfg_vars_min() {
 #  Returns:
 #	words - env_vars
 #
+#  Environment:	 AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
 #>
 ######################################################################
 p6_aws_cfg_vars_secret() {
@@ -46,6 +48,7 @@ p6_aws_cfg_vars_secret() {
 #  Returns:
 #	words - env_vars
 #
+#  Environment:	 AWS_CA_BUNDLE AWS_METADATA_SERVICE_NUM_ATTEMPTS AWS_METADATA_SERVICE_TIMEOUT AWS_OUTPUT AWS_REGION
 #>
 ######################################################################
 p6_aws_cfg_vars_config() {
@@ -68,6 +71,7 @@ p6_aws_cfg_vars_config() {
 #  Returns:
 #	words - env_vars
 #
+#  Environment:	 AWS_CONFIG_FILE AWS_ENV AWS_ENV_TAG AWS_PROFILE AWS_SHARED_CREDENTIALS_FILE AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_cfg_vars() {
@@ -96,6 +100,7 @@ p6_aws_cfg_vars() {
 #  Returns:
 #	code - rc
 #
+#  Environment:	 P6_FALSE P6_TRUE
 #>
 ######################################################################
 p6_aws_cfg_vars_filter_secret() {

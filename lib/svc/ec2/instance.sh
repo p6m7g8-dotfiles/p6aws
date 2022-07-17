@@ -22,6 +22,7 @@ p6_aws_svc_ec2_instance_show() {
 #  Args:
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_instances_list() {

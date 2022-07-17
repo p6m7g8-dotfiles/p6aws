@@ -6,6 +6,7 @@
 #  Returns:
 #	str - str
 #
+#  Environment:	 AWS_EKS_CLUSTER_NAME
 #>
 ######################################################################
 p6_aws_eks_prompt_info() {

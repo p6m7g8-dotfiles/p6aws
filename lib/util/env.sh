@@ -24,6 +24,7 @@ p6_aws_util_env_output() {
 #  Args:
 #	OPTIONAL val - [$P6_AWS_ORG]
 #
+#  Environment:	 P6_AWS_ORG
 #>
 ######################################################################
 p6_aws_util_env_org() {
@@ -83,6 +84,7 @@ p6_aws_util_env_region() {
 #  Returns:
 #	str - config_file
 #
+#  Environment:	 HOME
 #>
 ######################################################################
 p6_aws_util_env_config_file() {
@@ -107,6 +109,7 @@ p6_aws_util_env_config_file() {
 #  Returns:
 #	str - cred_file
 #
+#  Environment:	 HOME
 #>
 ######################################################################
 p6_aws_util_env_shared_credentials_file() {

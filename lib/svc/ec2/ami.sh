@@ -10,6 +10,7 @@
 #  Returns:
 #	str - user
 #
+#  Environment:	 RHEL USER WIN
 #>
 ######################################################################
 p6_aws_svc_ec2_user_from_ami_name() {
@@ -157,6 +158,7 @@ p6_aws_svc_ec2_ami_find_id() {
 #  Returns:
 #	str - ami_id
 #
+#  Environment:	 BSD
 #>
 ######################################################################
 p6_aws_svc_ec2_amis_freebsd12_latest() {
@@ -179,6 +181,7 @@ p6_aws_svc_ec2_amis_freebsd12_latest() {
 #  Returns:
 #	str - ami_id
 #
+#  Environment:	 _64
 #>
 ######################################################################
 p6_aws_svc_ec2_amis_amazon2_latest() {
@@ -202,6 +205,7 @@ p6_aws_svc_ec2_amis_amazon2_latest() {
 #  Returns:
 #	str - ami_id
 #
+#  Environment:	 RHEL
 #>
 ######################################################################
 p6_aws_svc_ec2_amis_rhel8_latest() {

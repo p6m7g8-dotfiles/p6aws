@@ -7,6 +7,7 @@
 #  Args:
 #	instance_id -
 #
+#  Environment:	 HOME
 #>
 ######################################################################
 p6_aws_svc_ec2_instance_connect_ssh_public_key_send() {

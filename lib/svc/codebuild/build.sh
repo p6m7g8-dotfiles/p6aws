@@ -36,6 +36,7 @@ p6_aws_svc_codebuild_projects_list() {
 #  Args:
 #	OPTIONAL project_name - [$AWS_CODEBUILD_PROJECT_NAME]
 #
+#  Environment:	 AWS_CODEBUILD_PROJECT_NAME
 #>
 ######################################################################
 p6_aws_svc_codebuild_project_build_list() {

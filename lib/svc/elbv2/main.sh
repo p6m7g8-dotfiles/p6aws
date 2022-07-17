@@ -3,6 +3,7 @@
 #
 # Function: p6_aws_svc_alb_list()
 #
+#  Environment:	 AWS_VPC_ID DNSN
 #>
 ######################################################################
 p6_aws_svc_alb_list() {

@@ -7,6 +7,7 @@
 #  Args:
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_sgs_list() {
@@ -30,6 +31,7 @@ p6_aws_svc_ec2_sgs_list() {
 #	security_group_id_or_name -
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_sg_show() {
@@ -60,6 +62,7 @@ p6_aws_svc_ec2_sg_show() {
 #	tag_name -
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_sg_id_from_tag_name() {
@@ -83,6 +86,7 @@ p6_aws_svc_ec2_sg_id_from_tag_name() {
 #	group_name -
 #	OPTIONAL vpc_id - [$AWS_VPC_ID]
 #
+#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_old_aws_svc_ec2_sg_id_from_group_name() {
