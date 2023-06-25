@@ -185,6 +185,13 @@
 - p6_aws_svc_autoscaling_asgs_list()
 
 
+### svc/billingconductor:
+
+#### svc/billingconductor/association.sh:
+
+- p6_aws_svc_billingconductor_associations_list()
+
+
 ### svc/cloudformation:
 
 #### svc/cloudformation/stack.sh:
@@ -502,6 +509,7 @@
 #### svc/secretsmanager/secret.sh:
 
 - p6_aws_svc_secretsmanager_list()
+- p6_aws_svc_secretsmanager_secret_get(name)
 
 
 ### svc/sns:
@@ -597,9 +605,12 @@
 │   ├── cred.sh
 │   └── debug.sh
 ├── svc
+│   ├── acm
 │   ├── autoscaling
 │   │   ├── _lc.sh
 │   │   └── asg.sh
+│   ├── billingconductor
+│   │   └── association.sh
 │   ├── cloudformation
 │   │   └── stack.sh
 │   ├── cloudwatch
@@ -688,7 +699,7 @@
     ├── p6_return.sh
     └── template.sh
 
-34 directories, 78 files
+36 directories, 79 files
 ```
 ## Author
 
