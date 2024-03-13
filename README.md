@@ -458,6 +458,7 @@
 #### svc/rds/instance.sh:
 
 - p6_aws_svc_rds_instance_arns_list()
+- p6_aws_svc_rds_pgpassword_from_iam_get(host, username, port)
 
 
 ### svc/route53:
@@ -605,7 +606,6 @@
 │   ├── cred.sh
 │   └── debug.sh
 ├── svc
-│   ├── acm
 │   ├── autoscaling
 │   │   ├── _lc.sh
 │   │   └── asg.sh
