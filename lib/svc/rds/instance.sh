@@ -32,5 +32,5 @@ p6_aws_svc_rds_pgpassword_from_iam_get() {
     local username="$2"
     local port="$3"
 
-    p6_aws_cli_cmd rds generate-db-auth-token --hostname $host --port $port
+    p6_aws_cli_cmd rds generate-db-auth-token --hostname "$host" --port "$port"
 }
