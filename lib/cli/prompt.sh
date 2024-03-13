@@ -17,6 +17,7 @@ p6_aws_cfg_prompt_info() {
     local org=$(p6_aws_env_org"${kind}")
     local profile=$(p6_aws_env_profile"${kind}")
     local region=$(p6_aws_env_region"${kind}")
+    local aws_env=$(p6_aws_env_env"${kind}")
     local vpc_id=$(p6_aws_env_vpc_id"${kind}")
 
     local str
@@ -29,6 +30,9 @@ p6_aws_cfg_prompt_info() {
     fi
     if ! p6_string_blank "$region"; then
         str="$str region:$region"
+    fi
+    if ! p6_string_blank "$aws_env"; then
+	str="$str env:$aws_env"
     fi
     if ! p6_string_blank "$vpc_id"; then
         str="$str vpc:$vpc_id"
