@@ -31,16 +31,15 @@ p6_aws_svc_codebuild_projects_list() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_codebuild_project_build_list([project_name=$AWS_CODEBUILD_PROJECT_NAME])
+# Function: p6_aws_svc_codebuild_project_build_list(project_name)
 #
 #  Args:
-#	OPTIONAL project_name - [$AWS_CODEBUILD_PROJECT_NAME]
+#	project_name -
 #
-#  Environment:	 AWS_CODEBUILD_PROJECT_NAME
 #>
 ######################################################################
 p6_aws_svc_codebuild_project_build_list() {
-	local project_name="${1:-$AWS_CODEBUILD_PROJECT_NAME}"
+	local project_name="$1"
 
 	p6_aws_cli_cmd codebuild \
 		list-builds-for-project \

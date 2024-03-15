@@ -1,18 +1,17 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_subnet_get(subnet_type, [vpc_id=$AWS_VPC_ID])
+# Function: p6_aws_svc_ec2_subnet_get(subnet_type, vpc_id)
 #
 #  Args:
 #	subnet_type -
-#	OPTIONAL vpc_id - [$AWS_VPC_ID]
+#	vpc_id -
 #
-#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_subnet_get() {
     local subnet_type="$1"
-    local vpc_id="${2:-$AWS_VPC_ID}"
+    local vpc_id="$2"
 
     local subnet_id
     subnet_id=$(p6_aws_svc_ec2_subnet_ids_get "$subnet_type" "$vpc_id" | head -1)
@@ -23,21 +22,20 @@ p6_aws_svc_ec2_subnet_get() {
 ######################################################################
 #<
 #
-# Function: words subnet_ids = p6_aws_svc_ec2_subnet_ids_get(subnet_type, [vpc_id=$AWS_VPC_ID])
+# Function: words subnet_ids = p6_aws_svc_ec2_subnet_ids_get(subnet_type, vpc_id)
 #
 #  Args:
 #	subnet_type -
-#	OPTIONAL vpc_id - [$AWS_VPC_ID]
+#	vpc_id -
 #
 #  Returns:
 #	words - subnet_ids
 #
-#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_subnet_ids_get() {
     local subnet_type="$1"
-    local vpc_id="${2:-$AWS_VPC_ID}"
+    local vpc_id="$2"
 
     local subnet_ids
     subnet_ids=$(p6_aws_svc_ec2_subnets_list "$vpc_id" | awk "/$subnet_type/ { print \$1 }")
@@ -48,16 +46,15 @@ p6_aws_svc_ec2_subnet_ids_get() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_subnets_list([vpc_id=$AWS_VPC_ID])
+# Function: p6_aws_svc_ec2_subnets_list(vpc_id)
 #
 #  Args:
-#	OPTIONAL vpc_id - [$AWS_VPC_ID]
+#	vpc_id -
 #
-#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_subnets_list() {
-    local vpc_id="${1:-$AWS_VPC_ID}"
+    local vpc_id="$2"
 
     local tag_name
     tag_name=$(p6_aws_cli_jq_tag_name_get)

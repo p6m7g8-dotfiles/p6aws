@@ -9,7 +9,6 @@
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_CA_BUNDLE_
 #>
 ######################################################################
 p6_aws_env_ca_bundle_saved() {
@@ -34,7 +33,6 @@ p6_aws_env_ca_bundle_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_METADATA_SERVICE_TIMEOUT_
 #>
 ######################################################################
 p6_aws_env_metadata_service_timeout_saved() {
@@ -59,7 +57,6 @@ p6_aws_env_metadata_service_timeout_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_METADATA_SERVICE_NUM_ATTEMPTS_
 #>
 ######################################################################
 p6_aws_env_metadata_service_num_attempts_saved() {
@@ -84,7 +81,6 @@ p6_aws_env_metadata_service_num_attempts_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_OUTPUT_
 #>
 ######################################################################
 p6_aws_env_output_saved() {
@@ -109,7 +105,6 @@ p6_aws_env_output_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_ORG_
 #>
 ######################################################################
 p6_aws_env_org_saved() {
@@ -134,7 +129,6 @@ p6_aws_env_org_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_DEFAULT_PROFILE_
 #>
 ######################################################################
 p6_aws_env_default_profile_saved() {
@@ -159,7 +153,6 @@ p6_aws_env_default_profile_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_DEFAULT_REGION_
 #>
 ######################################################################
 p6_aws_env_default_region_saved() {
@@ -184,7 +177,6 @@ p6_aws_env_default_region_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_VPC_ID_
 #>
 ######################################################################
 p6_aws_env_vpc_id_saved() {
@@ -201,6 +193,54 @@ p6_aws_env_vpc_id_saved() {
 ######################################################################
 #<
 #
+# Function: str old = p6_aws_env_eks_cluster_name_saved([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_eks_cluster_name_saved() {
+    local val="${1:-}"
+
+    local old="${AWS_EKS_CLUSTER_NAME_saved}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_EKS_CLUSTER_NAME_saved" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_codebuild_project_name_saved([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_codebuild_project_name_saved() {
+    local val="${1:-}"
+
+    local old="${AWS_CODEBUILD_PROJECT_NAME_saved}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_CODEBUILD_PROJECT_NAME_saved" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
 # Function: str old = p6_aws_env_env_tag_saved([val=])
 #
 #  Args:
@@ -209,7 +249,6 @@ p6_aws_env_vpc_id_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_ENV_TAG_
 #>
 ######################################################################
 p6_aws_env_env_tag_saved() {
@@ -234,7 +273,6 @@ p6_aws_env_env_tag_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_ENV_
 #>
 ######################################################################
 p6_aws_env_env_saved() {
@@ -259,7 +297,6 @@ p6_aws_env_env_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_PROFILE_
 #>
 ######################################################################
 p6_aws_env_profile_saved() {
@@ -284,7 +321,6 @@ p6_aws_env_profile_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_CONFIG_FILE_
 #>
 ######################################################################
 p6_aws_env_config_file_saved() {
@@ -309,7 +345,6 @@ p6_aws_env_config_file_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_SHARED_CREDENTIALS_FILE_
 #>
 ######################################################################
 p6_aws_env_shared_credentials_file_saved() {
@@ -334,7 +369,6 @@ p6_aws_env_shared_credentials_file_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_SESSION_TOKEN_
 #>
 ######################################################################
 p6_aws_env_session_token_saved() {
@@ -359,7 +393,6 @@ p6_aws_env_session_token_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_ACCESS_KEY_ID_
 #>
 ######################################################################
 p6_aws_env_access_key_id_saved() {
@@ -384,7 +417,6 @@ p6_aws_env_access_key_id_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_SECRET_ACCESS_KEY_
 #>
 ######################################################################
 p6_aws_env_secret_access_key_saved() {
@@ -409,7 +441,6 @@ p6_aws_env_secret_access_key_saved() {
 #  Returns:
 #	str - old
 #
-#  Environment:	 AWS_REGION_
 #>
 ######################################################################
 p6_aws_env_region_saved() {

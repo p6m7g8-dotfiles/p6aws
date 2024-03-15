@@ -1,16 +1,15 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_rtbs_list([vpc_id=$AWS_VPC_ID])
+# Function: p6_aws_svc_ec2_rtbs_list(vpc_id)
 #
 #  Args:
-#	OPTIONAL vpc_id - [$AWS_VPC_ID]
+#	vpc_id -
 #
-#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_rtbs_list() {
-    local vpc_id="${1:-$AWS_VPC_ID}"
+    local vpc_id="$1"
 
     local tag_name
     tag_name=$(p6_aws_cli_jq_tag_name_get)
@@ -32,18 +31,17 @@ p6_aws_svc_ec2_rtbs_list() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_rtb_show(rtb_id, [vpc_id=$AWS_VPC_ID])
+# Function: p6_aws_svc_ec2_rtb_show(rtb_id, vpc_id)
 #
 #  Args:
 #	rtb_id -
-#	OPTIONAL vpc_id - [$AWS_VPC_ID]
+#	vpc_id -
 #
-#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_rtb_show() {
     local rtb_id="$1"
-    local vpc_id="${2:-$AWS_VPC_ID}"
+    local vpc_id="$2"
 
     local tag_name
     tag_name=$(p6_aws_cli_jq_tag_name_get)

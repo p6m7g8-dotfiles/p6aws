@@ -71,13 +71,15 @@ p6_aws_cfg_vars_config() {
 #  Returns:
 #	words - env_vars
 #
-#  Environment:	 AWS_CONFIG_FILE AWS_ENV AWS_ENV_TAG AWS_PROFILE AWS_SHARED_CREDENTIALS_FILE AWS_VPC_ID
+#  Environment:	 AWS_CODEBUILD_PROJECT_NAME AWS_CONFIG_FILE AWS_EKS_CLUSTER_NAME AWS_ENV AWS_ENV_TAG AWS_PROFILE AWS_SHARED_CREDENTIALS_FILE AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_cfg_vars() {
 
 	local env_vars=" \
 	  AWS_VPC_ID \
+	  AWS_EKS_CLUSTER_NAME \
+	  AWS_CODEBUILD_PROJECT_NAME \
 	  AWS_ENV_TAG \
 	  AWS_ENV \
 	  AWS_PROFILE \

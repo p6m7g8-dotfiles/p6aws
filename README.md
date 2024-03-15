@@ -106,9 +106,11 @@
 
 - str old = p6_aws_env_access_key_id_active([val=])
 - str old = p6_aws_env_ca_bundle_active([val=])
+- str old = p6_aws_env_codebuild_project_name_active([val=])
 - str old = p6_aws_env_config_file_active([val=])
 - str old = p6_aws_env_default_profile_active([val=])
 - str old = p6_aws_env_default_region_active([val=])
+- str old = p6_aws_env_eks_cluster_name_active([val=])
 - str old = p6_aws_env_env_active([val=])
 - str old = p6_aws_env_env_tag_active([val=])
 - str old = p6_aws_env_metadata_service_num_attempts_active([val=])
@@ -126,9 +128,11 @@
 
 - str old = p6_aws_env_access_key_id_saved([val=])
 - str old = p6_aws_env_ca_bundle_saved([val=])
+- str old = p6_aws_env_codebuild_project_name_saved([val=])
 - str old = p6_aws_env_config_file_saved([val=])
 - str old = p6_aws_env_default_profile_saved([val=])
 - str old = p6_aws_env_default_region_saved([val=])
+- str old = p6_aws_env_eks_cluster_name_saved([val=])
 - str old = p6_aws_env_env_saved([val=])
 - str old = p6_aws_env_env_tag_saved([val=])
 - str old = p6_aws_env_metadata_service_num_attempts_saved([val=])
@@ -146,9 +150,11 @@
 
 - str old = p6_aws_env_access_key_id_source([val=])
 - str old = p6_aws_env_ca_bundle_source([val=])
+- str old = p6_aws_env_codebuild_project_name_source([val=])
 - str old = p6_aws_env_config_file_source([val=])
 - str old = p6_aws_env_default_profile_source([val=])
 - str old = p6_aws_env_default_region_source([val=])
+- str old = p6_aws_env_eks_cluster_name_source([val=])
 - str old = p6_aws_env_env_source([val=])
 - str old = p6_aws_env_env_tag_source([val=])
 - str old = p6_aws_env_metadata_service_num_attempts_source([val=])
@@ -218,7 +224,7 @@
 
 - p6_aws_codebuild_build_get(build_id)
 - p6_aws_svc_codebuild_builds_list()
-- p6_aws_svc_codebuild_project_build_list([project_name=$AWS_CODEBUILD_PROJECT_NAME])
+- p6_aws_svc_codebuild_project_build_list(project_name)
 - p6_aws_svc_codebuild_projects_list()
 
 
@@ -257,7 +263,7 @@
 #### svc/ec2/instance.sh:
 
 - p6_aws_svc_ec2_instance_show(instance_id)
-- p6_aws_svc_ec2_instances_list([vpc_id=$AWS_VPC_ID])
+- p6_aws_svc_ec2_instances_list(vpc_id)
 - str az = p6_aws_svc_ec2_availability_zone(instance_id)
 - str instance_id = p6_aws_svc_ec2_instance_id_from_name_tag(name)
 - str private_ip = p6_aws_svc_ec2_instance_private_ip(instance_id)
@@ -269,11 +275,11 @@
 
 #### svc/ec2/nat.sh:
 
-- p6_aws_svc_ec2_nat_gateway_show([vpc_id=$AWS_VPC_ID])
+- p6_aws_svc_ec2_nat_gateway_show(vpc_id)
 
 #### svc/ec2/network.sh:
 
-- p6_aws_svc_ec2_network_int_list([vpc_id=$AWS_VPC_ID])
+- p6_aws_svc_ec2_network_int_list(vpc_id)
 
 #### svc/ec2/region.sh:
 
@@ -282,21 +288,21 @@
 
 #### svc/ec2/rtb.sh:
 
-- p6_aws_svc_ec2_rtb_show(rtb_id, [vpc_id=$AWS_VPC_ID])
-- p6_aws_svc_ec2_rtbs_list([vpc_id=$AWS_VPC_ID])
+- p6_aws_svc_ec2_rtb_show(rtb_id, vpc_id)
+- p6_aws_svc_ec2_rtbs_list(vpc_id)
 
 #### svc/ec2/sg.sh:
 
-- p6_aws_svc_ec2_sg_id_from_tag_name(tag_name, [vpc_id=$AWS_VPC_ID])
-- p6_aws_svc_ec2_sg_show(security_group_id_or_name, [vpc_id=$AWS_VPC_ID])
-- p6_aws_svc_ec2_sgs_list([vpc_id=$AWS_VPC_ID])
-- p6_old_aws_svc_ec2_sg_id_from_group_name(group_name, [vpc_id=$AWS_VPC_ID])
+- p6_aws_svc_ec2_sg_id_from_tag_name(tag_name, vpc_id)
+- p6_aws_svc_ec2_sg_show(security_group_id_or_name, vpc_id)
+- p6_aws_svc_ec2_sgs_list(vpc_id)
+- p6_old_aws_svc_ec2_sg_id_from_group_name(group_name, vpc_id)
 
 #### svc/ec2/subnet.sh:
 
-- p6_aws_svc_ec2_subnet_get(subnet_type, [vpc_id=$AWS_VPC_ID])
-- p6_aws_svc_ec2_subnets_list([vpc_id=$AWS_VPC_ID])
-- words subnet_ids = p6_aws_svc_ec2_subnet_ids_get(subnet_type, [vpc_id=$AWS_VPC_ID])
+- p6_aws_svc_ec2_subnet_get(subnet_type, vpc_id)
+- p6_aws_svc_ec2_subnets_list(vpc_id)
+- words subnet_ids = p6_aws_svc_ec2_subnet_ids_get(subnet_type, vpc_id)
 
 #### svc/ec2/tgw.sh:
 
@@ -325,11 +331,9 @@
 
 #### svc/eks/cluster.sh:
 
-- str cluster_status = p6_aws_svc_eks_cluster_status([cluster_name=$AWS_EKS_CLUSTER_NAME])
-
-#### svc/eks/prompt.sh:
-
-- p6_aws_eks_prompt_info()
+- p6_aws_svc_eks_cluster_update_kubeconfig(cluster_name)
+- str cluster_name = p6_aws_svc_eks_cluster_find(glob)
+- str cluster_status = p6_aws_svc_eks_cluster_status(cluster_name)
 
 
 ### svc/elb:
@@ -639,8 +643,7 @@
 │   ├── ec2instanceconnect
 │   │   └── util.sh
 │   ├── eks
-│   │   ├── cluster.sh
-│   │   └── prompt.sh
+│   │   └── cluster.sh
 │   ├── elb
 │   │   └── main.sh
 │   ├── elbv2
@@ -699,7 +702,7 @@
     ├── p6_return.sh
     └── template.sh
 
-36 directories, 79 files
+36 directories, 78 files
 ```
 ## Author
 

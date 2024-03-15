@@ -17,16 +17,15 @@ p6_aws_svc_ec2_instance_show() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_instances_list([vpc_id=$AWS_VPC_ID])
+# Function: p6_aws_svc_ec2_instances_list(vpc_id)
 #
 #  Args:
-#	OPTIONAL vpc_id - [$AWS_VPC_ID]
+#	vpc_id -
 #
-#  Environment:	 AWS_VPC_ID
 #>
 ######################################################################
 p6_aws_svc_ec2_instances_list() {
-    local vpc_id="${1:-$AWS_VPC_ID}"
+    local vpc_id="$1"
 
     local tag_name
     tag_name=$(p6_aws_cli_jq_tag_name_get)
