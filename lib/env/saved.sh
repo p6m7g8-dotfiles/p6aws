@@ -337,6 +337,30 @@ p6_aws_env_sso_role_name_saved() {
 ######################################################################
 #<
 #
+# Function: str old = p6_aws_env_login_default_sso_region_saved([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_login_default_sso_region_saved() {
+    local val="${1:-}"
+
+    local old="${AWS_LOGIN_DEFAULT_SSO_REGION_saved}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_LOGIN_DEFAULT_SSO_REGION_saved" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
 # Function: str old = p6_aws_env_vpc_id_saved([val=])
 #
 #  Args:

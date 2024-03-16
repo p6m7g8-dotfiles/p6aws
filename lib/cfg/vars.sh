@@ -83,7 +83,8 @@ p6_aws_cfg_vars_sso() {
 	AWS_SSO_REGION \
 	AWS_SSO_ACCOUNT_NAME \
 	AWS_SSO_ACCOUNT_ID \
-	AWS_SSO_ROLE_NAME"
+	AWS_SSO_ROLE_NAME \
+	AWS_LOGIN_DEFAULT_SSO_REGION"
 
  p6_return_words "$env_vars"
 }
