@@ -72,6 +72,7 @@
 - words env_vars = p6_aws_cfg_vars_config()
 - words env_vars = p6_aws_cfg_vars_min()
 - words env_vars = p6_aws_cfg_vars_secret()
+- words env_vars = p6_aws_cfg_vars_sso()
 
 
 ### cli:
@@ -110,6 +111,8 @@
 - str old = p6_aws_env_config_file_active([val=])
 - str old = p6_aws_env_default_profile_active([val=])
 - str old = p6_aws_env_default_region_active([val=])
+- str old = p6_aws_env_default_sso_region_active([val=])
+- str old = p6_aws_env_default_sso_start_url_active([val=])
 - str old = p6_aws_env_eks_cluster_name_active([val=])
 - str old = p6_aws_env_env_active([val=])
 - str old = p6_aws_env_env_tag_active([val=])
@@ -122,6 +125,11 @@
 - str old = p6_aws_env_secret_access_key_active([val=])
 - str old = p6_aws_env_session_token_active([val=])
 - str old = p6_aws_env_shared_credentials_file_active([val=])
+- str old = p6_aws_env_sso_account_id_active([val=])
+- str old = p6_aws_env_sso_account_name_active([val=])
+- str old = p6_aws_env_sso_region_active([val=])
+- str old = p6_aws_env_sso_role_name_active([val=])
+- str old = p6_aws_env_sso_start_url_active([val=])
 - str old = p6_aws_env_vpc_id_active([val=])
 
 #### env/saved.sh:
@@ -132,6 +140,8 @@
 - str old = p6_aws_env_config_file_saved([val=])
 - str old = p6_aws_env_default_profile_saved([val=])
 - str old = p6_aws_env_default_region_saved([val=])
+- str old = p6_aws_env_default_sso_region_saved([val=])
+- str old = p6_aws_env_default_sso_start_url_saved([val=])
 - str old = p6_aws_env_eks_cluster_name_saved([val=])
 - str old = p6_aws_env_env_saved([val=])
 - str old = p6_aws_env_env_tag_saved([val=])
@@ -144,6 +154,11 @@
 - str old = p6_aws_env_secret_access_key_saved([val=])
 - str old = p6_aws_env_session_token_saved([val=])
 - str old = p6_aws_env_shared_credentials_file_saved([val=])
+- str old = p6_aws_env_sso_account_id_saved([val=])
+- str old = p6_aws_env_sso_account_name_saved([val=])
+- str old = p6_aws_env_sso_region_saved([val=])
+- str old = p6_aws_env_sso_role_name_saved([val=])
+- str old = p6_aws_env_sso_start_url_saved([val=])
 - str old = p6_aws_env_vpc_id_saved([val=])
 
 #### env/source.sh:
@@ -154,6 +169,8 @@
 - str old = p6_aws_env_config_file_source([val=])
 - str old = p6_aws_env_default_profile_source([val=])
 - str old = p6_aws_env_default_region_source([val=])
+- str old = p6_aws_env_default_sso_region_source([val=])
+- str old = p6_aws_env_default_sso_start_url_source([val=])
 - str old = p6_aws_env_eks_cluster_name_source([val=])
 - str old = p6_aws_env_env_source([val=])
 - str old = p6_aws_env_env_tag_source([val=])
@@ -166,6 +183,11 @@
 - str old = p6_aws_env_secret_access_key_source([val=])
 - str old = p6_aws_env_session_token_source([val=])
 - str old = p6_aws_env_shared_credentials_file_source([val=])
+- str old = p6_aws_env_sso_account_id_source([val=])
+- str old = p6_aws_env_sso_account_name_source([val=])
+- str old = p6_aws_env_sso_region_source([val=])
+- str old = p6_aws_env_sso_role_name_source([val=])
+- str old = p6_aws_env_sso_start_url_source([val=])
 - str old = p6_aws_env_vpc_id_source([val=])
 
 
@@ -543,6 +565,11 @@
 
 ### svc/sts:
 
+#### svc/sts/account.sh:
+
+- str account_id = p6_aws_svc_sts_account_id()
+- str role_name = p6_aws_svc_sts_account_role_name()
+
 #### svc/sts/identity.sh:
 
 - p6_aws_svc_sts_identity_broker_custom_login_url(cred_file)
@@ -692,6 +719,7 @@
 │   ├── stepfunctions
 │   │   └── machine.sh
 │   └── sts
+│       ├── account.sh
 │       ├── debug.sh
 │       ├── identity.sh
 │       ├── prompt.sh
@@ -702,7 +730,7 @@
     ├── p6_return.sh
     └── template.sh
 
-36 directories, 78 files
+36 directories, 79 files
 ```
 ## Author
 

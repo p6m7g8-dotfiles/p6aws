@@ -26,8 +26,8 @@ p6_aws_cfg_realize() {
             p6_aws_cfg__debug "realize(): {line=$line}"
 
             case $line in
-	    sso_*) ;;
 	    credential_process*) ;;
+	    sso_auto_populated*) ;;
             *\[*$profile*\]*)
                 p6_aws_cfg__debug "realize(): {section=$profile}"
 

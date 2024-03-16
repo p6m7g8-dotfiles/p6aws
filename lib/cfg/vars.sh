@@ -66,6 +66,31 @@ p6_aws_cfg_vars_config() {
 ######################################################################
 #<
 #
+# Function: words env_vars = p6_aws_cfg_vars_sso()
+#
+#  Returns:
+#	words - env_vars
+#
+#  Environment:	 AWS_DEFAULT_SSO_REGION AWS_DEFAULT_SSO_START_URL AWS_SSO_ACCOUNT_ID AWS_SSO_ACCOUNT_NAME AWS_SSO_REGION AWS_SSO_ROLE_NAME AWS_SSO_START_URL
+#>
+######################################################################
+p6_aws_cfg_vars_sso() {
+
+ local env_vars=" \
+	AWS_DEFAULT_SSO_START_URL \
+ 	AWS_DEFAULT_SSO_REGION \
+	AWS_SSO_START_URL \
+	AWS_SSO_REGION \
+	AWS_SSO_ACCOUNT_NAME \
+	AWS_SSO_ACCOUNT_ID \
+	AWS_SSO_ROLE_NAME"
+
+ p6_return_words "$env_vars"
+}
+
+######################################################################
+#<
+#
 # Function: words env_vars = p6_aws_cfg_vars()
 #
 #  Returns:
@@ -86,7 +111,7 @@ p6_aws_cfg_vars() {
 	  AWS_CONFIG_FILE \
 	  AWS_SHARED_CREDENTIALS_FILE"
 
-	env_vars="$env_vars $(p6_aws_cfg_vars_secret) $(p6_aws_cfg_vars_config) $(p6_aws_cfg_vars_min)"
+	env_vars="$env_vars $(p6_aws_cfg_vars_secret) $(p6_aws_cfg_vars_config) $(p6_aws_cfg_vars_min) $(p6_aws_cfg_vars_sso)"
 
 	p6_return_words "$env_vars"
 }

@@ -169,6 +169,174 @@ p6_aws_env_default_region_active() {
 ######################################################################
 #<
 #
+# Function: str old = p6_aws_env_default_sso_start_url_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_default_sso_start_url_active() {
+    local val="${1:-}"
+
+    local old="${AWS_DEFAULT_SSO_START_URL}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_DEFAULT_SSO_START_URL" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_default_sso_region_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_default_sso_region_active() {
+    local val="${1:-}"
+
+    local old="${AWS_DEFAULT_SSO_REGION}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_DEFAULT_SSO_REGION" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_sso_start_url_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_sso_start_url_active() {
+    local val="${1:-}"
+
+    local old="${AWS_SSO_START_URL}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_SSO_START_URL" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_sso_region_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_sso_region_active() {
+    local val="${1:-}"
+
+    local old="${AWS_SSO_REGION}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_SSO_REGION" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_sso_account_name_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_sso_account_name_active() {
+    local val="${1:-}"
+
+    local old="${AWS_SSO_ACCOUNT_NAME}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_SSO_ACCOUNT_NAME" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_sso_account_id_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_sso_account_id_active() {
+    local val="${1:-}"
+
+    local old="${AWS_SSO_ACCOUNT_ID}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_SSO_ACCOUNT_ID" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
+# Function: str old = p6_aws_env_sso_role_name_active([val=])
+#
+#  Args:
+#	OPTIONAL val - []
+#
+#  Returns:
+#	str - old
+#
+#>
+######################################################################
+p6_aws_env_sso_role_name_active() {
+    local val="${1:-}"
+
+    local old="${AWS_SSO_ROLE_NAME}"
+
+    if ! p6_string_blank "$val"; then
+        p6_env_export "AWS_SSO_ROLE_NAME" "$val"
+    fi
+
+    p6_return_str "$old"
+}
+######################################################################
+#<
+#
 # Function: str old = p6_aws_env_vpc_id_active([val=])
 #
 #  Args:
