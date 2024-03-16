@@ -11,12 +11,9 @@
 p6_aws_cli_shortcuts_activate() {
 	local org="$1"
 
-	p6_aws_util_env_shared_credentials_file "$org"
 	p6_aws_util_env_config_file "$org"
 
-	local cred_file
 	local conf_file
-	cred_file=$(p6_aws_env_shared_credentials_file_active)
 	conf_file=$(p6_aws_env_config_file_active)
 
 	local line
@@ -31,14 +28,14 @@ p6_aws_cli_shortcuts_activate() {
 			profile=$line
 			profile=$(p6_string_replace "$profile" "\[" "")
 			profile=$(p6_string_replace "$profile" "\]" "")
+			profile=$(p6_string_replace "$profile" "profile " "")
 			;;
 		"")
 			p6_aws_profile__debug "util_init(): {end profile}"
-			p6_aws_profile_config_add "$conf_file" "$profile"
 			p6_aws_cli_shortcuts_generate_one "$profile"
 			;;
 		esac
-	done <"$cred_file" >/dev/null
+	done <"$conf_file" >/dev/null
 
 	p6_return_void
 }
