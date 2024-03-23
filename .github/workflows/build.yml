@@ -4,7 +4,7 @@ on:
   push: {}
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: ubuntu-latest
     env:
       CI: "true"
       P6_DFZ_SRC_P6M7G8_DOTFILES_DIR: ".."
