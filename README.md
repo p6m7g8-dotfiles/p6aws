@@ -45,7 +45,7 @@
 #### p6aws/init.zsh:
 
 - p6df::modules::p6aws::deps()
-- p6df::modules::p6aws::init(module, dir)
+- p6df::modules::p6aws::init(_module, dir)
 
 
 ### cfg:
@@ -85,8 +85,8 @@
 
 #### cli/organizations.sh:
 
-- p6_aws_cli_organization_activate(org)
-- p6_aws_cli_organization_deactivate(org)
+- p6_aws_cli_organization_off(org)
+- p6_aws_cli_organization_on(org)
 
 #### cli/prompt.sh:
 
@@ -94,8 +94,8 @@
 
 #### cli/shortcuts.sh:
 
-- p6_aws_cli_shortcuts_activate(org)
 - p6_aws_cli_shortcuts_generate_un(org)
+- p6_aws_cli_shortcuts_on(org)
 - str func = p6_aws_cli_shortcuts_generate_one(profile)
 - str prefix = p6_aws_cli_shortcuts_prefix()
 - str shell_function_name = p6_aws_shortcuts_profile_to_shell_function_name(profile)
@@ -116,6 +116,7 @@
 - str old = p6_aws_env_eks_cluster_name_active([val=])
 - str old = p6_aws_env_env_active([val=])
 - str old = p6_aws_env_env_tag_active([val=])
+- str old = p6_aws_env_login_default_sso_region_active([val=])
 - str old = p6_aws_env_metadata_service_num_attempts_active([val=])
 - str old = p6_aws_env_metadata_service_timeout_active([val=])
 - str old = p6_aws_env_org_active([val=])
@@ -145,6 +146,7 @@
 - str old = p6_aws_env_eks_cluster_name_saved([val=])
 - str old = p6_aws_env_env_saved([val=])
 - str old = p6_aws_env_env_tag_saved([val=])
+- str old = p6_aws_env_login_default_sso_region_saved([val=])
 - str old = p6_aws_env_metadata_service_num_attempts_saved([val=])
 - str old = p6_aws_env_metadata_service_timeout_saved([val=])
 - str old = p6_aws_env_org_saved([val=])
@@ -174,6 +176,7 @@
 - str old = p6_aws_env_eks_cluster_name_source([val=])
 - str old = p6_aws_env_env_source([val=])
 - str old = p6_aws_env_env_tag_source([val=])
+- str old = p6_aws_env_login_default_sso_region_source([val=])
 - str old = p6_aws_env_metadata_service_num_attempts_source([val=])
 - str old = p6_aws_env_metadata_service_timeout_source([val=])
 - str old = p6_aws_env_org_source([val=])
@@ -583,7 +586,7 @@
 
 - p6_aws_svc_sts_role_assume(role_arn, role_session_name)
 - p6_aws_svc_sts_role_assume_un()
-- p6_aws_svc_sts_role_credentials_activate(json, role_arn, role_session_name, type)
+- p6_aws_svc_sts_role_credentials_on(json, role_arn, role_session_name, type)
 - p6_aws_svc_sts_role_federation_assume(profile)
 
 
