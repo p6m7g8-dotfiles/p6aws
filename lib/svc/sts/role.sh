@@ -18,7 +18,7 @@ p6_aws_svc_sts_role_assume() {
 
     json=$(p6_aws_cli_cmd sts assume-role --role-arn "$role_arn" --role-session-name "$role_session_name")
 
-    p6_aws_svc_sts_role_credentials_activate "$json" "$role_arn" "$role_session_name" "sts"
+    p6_aws_svc_sts_role_credentials_on "$json" "$role_arn" "$role_session_name" "sts"
 
     p6_return_void
 }
@@ -39,7 +39,7 @@ p6_aws_svc_sts_role_federation_assume() {
     local json
     json=$(p6_aws_cli_cmd sts get-federation-token --name p6cli --profile "$profile")
 
-    p6_aws_svc_sts_role_credentials_activate "$json" "$profile" "p6cli" "federation"
+    p6_aws_svc_sts_role_credentials_on "$json" "$profile" "p6cli" "federation"
 
     p6_return_void
 }
@@ -47,7 +47,7 @@ p6_aws_svc_sts_role_federation_assume() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_sts_role_credentials_activate(json, role_arn, role_session_name, type)
+# Function: p6_aws_svc_sts_role_credentials_on(json, role_arn, role_session_name, type)
 #
 #  Args:
 #	json -
@@ -57,7 +57,7 @@ p6_aws_svc_sts_role_federation_assume() {
 #
 #>
 ######################################################################
-p6_aws_svc_sts_role_credentials_activate() {
+p6_aws_svc_sts_role_credentials_on() {
     local json="$1"
     local role_arn="$2" # aka profile
     local role_session_name="$3"

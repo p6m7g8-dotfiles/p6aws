@@ -71,7 +71,7 @@ p6_aws_cfg_vars_config() {
 #  Returns:
 #	words - env_vars
 #
-#  Environment:	 AWS_DEFAULT_SSO_REGION AWS_DEFAULT_SSO_START_URL AWS_SSO_ACCOUNT_ID AWS_SSO_ACCOUNT_NAME AWS_SSO_REGION AWS_SSO_ROLE_NAME AWS_SSO_START_URL
+#  Environment:	 AWS_DEFAULT_SSO_REGION AWS_DEFAULT_SSO_START_URL AWS_LOGIN_DEFAULT_SSO_REGION AWS_SSO_ACCOUNT_ID AWS_SSO_ACCOUNT_NAME AWS_SSO_REGION AWS_SSO_ROLE_NAME AWS_SSO_START_URL
 #>
 ######################################################################
 p6_aws_cfg_vars_sso() {

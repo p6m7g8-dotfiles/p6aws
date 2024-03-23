@@ -15,16 +15,16 @@ p6df::modules::p6aws::deps() {
 ######################################################################
 #<
 #
-# Function: p6df::modules::p6aws::init(module, dir)
+# Function: p6df::modules::p6aws::init(_module, dir)
 #
 #  Args:
-#	module -
+#	_module -
 #	dir -
 #
 #>
 ######################################################################
 p6df::modules::p6aws::init() {
-  local module="$1"
+  local _module="$1"
   local dir="$2"
 
   p6_bootstrap "$dir"

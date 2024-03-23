@@ -1,14 +1,14 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_cli_shortcuts_activate(org)
+# Function: p6_aws_cli_shortcuts_on(org)
 #
 #  Args:
 #	org -
 #
 #>
 ######################################################################
-p6_aws_cli_shortcuts_activate() {
+p6_aws_cli_shortcuts_on() {
 	local org="$1"
 
 	p6_aws_util_env_config_file "$org"
