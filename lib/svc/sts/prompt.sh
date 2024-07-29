@@ -16,8 +16,8 @@ p6_aws_sts_prompt_info() {
 
   local str
   if p6_file_exists "$creds"; then
-    local mtime=$(p6_dt_mtime "$creds")
-    local now=$(p6_dt_now_epoch_seconds)
+    local mtime=$(p6_file_mtime "$creds")
+    local now=$(p6_date_point_now_epoch_seconds)
     local diff=$(p6_math_sub "$now" "$mtime")
 
     if p6_math_gt "$diff" "7200"; then
