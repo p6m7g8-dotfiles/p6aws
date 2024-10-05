@@ -8,7 +8,7 @@
 p6_aws_svc_dynamodb_tables_list() {
 
   p6_aws_cli_cmd dynamodb list-tables \
-    --query "TableNames[]" \
+    --query "'TableNames[]'" \
     --output text
 }
 
@@ -27,7 +27,7 @@ p6_aws_svc_dynamodb_table_describe() {
 
   p6_aws_cli_cmd dynamodb describe-table \
     --table-name "$table_name" \
-    --query "Table.AttributeDefinitions[].[AttributeType, AttributeName]" \
+    --query "'Table.AttributeDefinitions[].[AttributeType, AttributeName]'" \
     --output text
 }
 
@@ -46,6 +46,6 @@ p6_aws_svc_dynamodb_table_all() {
 
   p6_aws_cli_cmd dynamodb scan \
     --table-name "$table_name" \
-    --query "Items[]" |
+    --query "'Items[]'" |
     jq -c '.[]'
 }
