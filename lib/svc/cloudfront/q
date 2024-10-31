@@ -1,0 +1,1 @@
+"DistributionList.Items[].[Id, Status, Enabled, PriceClass, HttpVersion, ViewerCertificate.SSLSupportMethod, ViewerCertificate.MinimumProtocolVersion, join(',', DefaultCacheBehavior.AllowedMethods.Items), DefaultCacheBehavior.ViewerProtocolPolicy, join(',', Aliases.Items)]"
