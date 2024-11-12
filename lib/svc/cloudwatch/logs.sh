@@ -25,5 +25,5 @@ p6_aws_svc_logs_watch() {
 ######################################################################
 p6_aws_svc_logs_groups_list() {
 
-    awslogs groups
+    aws logs describe-log-groups --query "logGroups[].[creationTime,logGroupName]" --output text |sort -n -k 1,1
 }
