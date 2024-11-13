@@ -8,8 +8,8 @@
 p6_aws_svc_dynamodb_tables_list() {
 
   p6_aws_cli_cmd dynamodb list-tables \
-    --query "'TableNames[]'" \
-    --output text
+    --query "'TableNames[]'" | \
+    jq -r ".[]"
 }
 
 ######################################################################

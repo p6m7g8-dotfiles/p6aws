@@ -20,6 +20,25 @@ p6_return_aws_arn() {
 ######################################################################
 #<
 #
+# Function: str organization_id = p6_return_aws_organization_id(organization_id)
+#
+#  Args:
+#	organization_id -
+#
+#  Returns:
+#	str - organization_id
+#
+#>
+######################################################################
+p6_return_aws_organization_id() {
+    local organization_id="$1"
+
+    p6_return_str "$organization_id"
+}
+
+######################################################################
+#<
+#
 # Function: str account_id = p6_return_aws_account_id(account_id)
 #
 #  Args:
