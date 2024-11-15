@@ -61,7 +61,7 @@ p6_aws_svc_organizations_account_id_from_account_name() {
   account_name=$(p6_string_replace "$account_name" '\"')
 
   local new_account_id
-  new_account_id=$(p6_aws_svc_organizations_accounts_list | awk -v k="$account_name" '$5 ~ k { print $1 }')
+  new_account_id=$(p6_aws_svc_organizations_accounts_list_active | awk -v k="$account_name" '$5 ~ k { print $1 }')
 
   p6_return_aws_account_id "$new_account_id"
 }
