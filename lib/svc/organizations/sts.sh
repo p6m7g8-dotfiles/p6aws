@@ -28,7 +28,7 @@ p6_aws_svc_organizations_sts_local_su_un() {
 p6_aws_svc_organizations_sts_su() {
   local account_name_or_account_id="$1"
 
-  if p6_string_eq_1 "$GITHUB_ACTIONS"; then
+  if p6_string_eq "$GITHUB_ACTIONS" "true"; then
     p6_aws_svc_organizations_sts_github_su "$account_name_or_account_id"
   else
     p6_aws_svc_organizations_sts_local_su "$account_name_or_account_id"
@@ -47,7 +47,7 @@ p6_aws_svc_organizations_sts_su() {
 ######################################################################
 p6_aws_svc_organizations_sts_su_un() {
 
-  if p6_string_eq_1 "$GITHUB_ACTIONS"; then
+  if p6_string_eq "$GITHUB_ACTIONS" "true"; then
     p6_aws_svc_organizations_sts_github_su_un
   else
     p6_aws_svc_organizations_sts_local_su_un
