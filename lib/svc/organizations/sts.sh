@@ -134,7 +134,7 @@ p6_aws_svc_organizations_sts_github_su() {
   local new_arn
   new_arn="arn:aws:iam::${account_id}:role/OrganizationAccountAccessRole"
 
-  local json=$(p6_aws_cli_cmd sts assume-role --role-arn "$role_arn" --role-session-name "$role_session_name")
+  local json=$(p6_aws_cli_cmd sts assume-role --role-arn "$new_arn" --role-session-name "$role_session_name")
   local access_key_id=$(p6_json_eval "$json" "-r" ".Credentials.AccessKeyId")
   local secret_access_key=$(p6_json_eval "$json" "-r" ".Credentials.SecretAccessKey")
   local session_token=$(p6_json_eval "$json" "-r" ".Credentials.SessionToken")
