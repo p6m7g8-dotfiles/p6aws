@@ -27,7 +27,7 @@ p6_aws_svc_organizations_sts_su() {
 
   local account_id
   case $account_name_or_account_id in
-  *[0-9]*) account_id=$account_name_or_account_id ;;
+  ^[0-9]*) account_id=$account_name_or_account_id ;;
   *) account_id=$(p6_aws_svc_organizations_account_id_from_account_name "$account_name_or_account_id") ;;
   esac
 
