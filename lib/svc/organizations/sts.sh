@@ -6,7 +6,7 @@
 #  Environment:	 GITHUB_ACTIONS
 #>
 ######################################################################
-p6_aws_svc_organizations_sts_su_un() {
+p6_aws_svc_organizations_sts_local_su_un() {
 
   p6_aws_svc_sts_role_assume_un
 
@@ -31,7 +31,7 @@ p6_aws_svc_organizations_sts_su() {
   if p6_string_eq_1 "$GITHUB_ACTIONS"; then
     p6_aws_svc_organizations_sts_github_su "$account_name_or_account_id"
   else
-    p6_aws_svc_organizations_sts_su "$account_name_or_account_id"
+    p6_aws_svc_organizations_sts_local_su "$account_name_or_account_id"
   fi
 
   p6_return_void
@@ -50,7 +50,7 @@ p6_aws_svc_organizations_sts_su_un() {
   if p6_string_eq_1 "$GITHUB_ACTIONS"; then
     p6_aws_svc_organizations_sts_github_su_un
   else
-    p6_aws_svc_organizations_sts_su_un
+    p6_aws_svc_organizations_sts_local_su_un
   fi
 
   p6_return_void
@@ -68,7 +68,7 @@ p6_aws_svc_organizations_sts_su_un() {
 #  Environment:	 GITHUB_ACTIONS
 #>
 ######################################################################
-p6_aws_svc_organizations_sts_su() {
+p6_aws_svc_organizations_sts_local_su() {
   local account_name_or_account_id="$1"
 
   local account_id
