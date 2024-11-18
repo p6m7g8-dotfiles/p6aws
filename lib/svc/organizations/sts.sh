@@ -1,9 +1,8 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_organizations_sts_su_un()
+# Function: p6_aws_svc_organizations_sts_local_su_un()
 #
-#  Environment:	 GITHUB_ACTIONS
 #>
 ######################################################################
 p6_aws_svc_organizations_sts_local_su_un() {
@@ -16,10 +15,9 @@ p6_aws_svc_organizations_sts_local_su_un() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_organizations_sts_su(account_name_or_account_id, account_name_or_account_id)
+# Function: p6_aws_svc_organizations_sts_su(account_name_or_account_id)
 #
 #  Args:
-#	account_name_or_account_id -
 #	account_name_or_account_id -
 #
 #  Environment:	 GITHUB_ACTIONS
@@ -59,13 +57,11 @@ p6_aws_svc_organizations_sts_su_un() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_organizations_sts_su(account_name_or_account_id, account_name_or_account_id)
+# Function: p6_aws_svc_organizations_sts_local_su(account_name_or_account_id)
 #
 #  Args:
 #	account_name_or_account_id -
-#	account_name_or_account_id -
 #
-#  Environment:	 GITHUB_ACTIONS
 #>
 ######################################################################
 p6_aws_svc_organizations_sts_local_su() {
@@ -118,7 +114,7 @@ p6_aws_svc_organizations_sts_run_as() {
 #  Args:
 #	account_name_or_account_id -
 #
-#  Environment:	 AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+#  Environment:	 AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN PRIOR_AWS_ACCESS_KEY_ID PRIOR_SECRET_ACCES_KEY PRIOR_SESSION_TOKEN
 #>
 ######################################################################
 p6_aws_svc_organizations_sts_github_su() {
@@ -155,7 +151,7 @@ p6_aws_svc_organizations_sts_github_su() {
 #
 # Function: p6_aws_svc_organizations_sts_github_su_un()
 #
-#  Environment:	 AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+#  Environment:	 AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN PRIOR_AWS_ACCESS_KEY_ID PRIOR_AWS_SECRET_KEY PRIOR_AWS_SESSION_TOKEN
 #>
 ######################################################################
 p6_aws_svc_organizations_sts_github_su_un() {
