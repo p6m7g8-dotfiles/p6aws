@@ -136,7 +136,7 @@ p6_aws_svc_organizations_sts_github_su() {
   local session_token=$(p6_json_eval "$json" "-r" ".Credentials.SessionToken")
 
   export PRIOR_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
-  export PRIOR_AWS_SECRET_ACCES_KEY=$AWS_SECRET_ACCESS_KEY
+  export PRIOR_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
   export PRIOR_AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN
 
   export AWS_ACCESS_KEY_ID="$access_key_id"
