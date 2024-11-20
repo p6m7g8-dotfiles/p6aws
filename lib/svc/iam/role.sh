@@ -20,7 +20,10 @@ p6_aws_svc_iam_role_policies() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_iam_roles_list()
+# Function: stream  = p6_aws_svc_iam_roles_list()
+#
+#  Returns:
+#	stream - 
 #
 #>
 ######################################################################
@@ -29,4 +32,24 @@ p6_aws_svc_iam_roles_list() {
 	p6_aws_cli_cmd iam list-roles \
 		--output text \
 		--query "'Roles[].[RoleId,RoleName,Arn]'"
+
+	p6_return_stream
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_iam_role_service_linked_created(service)
+#
+#  Args:
+#	service -
+#
+#>
+######################################################################
+p6_aws_svc_iam_role_service_linked_created() {
+	local service="$1"
+
+	p6_aws_cli_cmd iam create-service-linked-role --aws-service-name "$service"
+
+	p6_return_void
 }
