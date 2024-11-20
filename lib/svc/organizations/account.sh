@@ -1,7 +1,10 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_organizations_accounts_list()
+# Function: stream  = p6_aws_svc_organizations_accounts_list()
+#
+#  Returns:
+#	stream - 
 #
 #>
 ######################################################################
@@ -10,12 +13,17 @@ p6_aws_svc_organizations_accounts_list() {
   p6_aws_cli_cmd organizations list-accounts \
     --output text \
     --query "'Accounts[].[Id, Status, JoinedMethod, Arn, Name, Email]'"
+
+  p6_return_stream
 }
 
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_organizations_accounts_list_active()
+# Function: stream  = p6_aws_svc_organizations_accounts_list_active()
+#
+#  Returns:
+#	stream - 
 #
 #  Environment:	 ACTIVE
 #>
@@ -23,6 +31,60 @@ p6_aws_svc_organizations_accounts_list() {
 p6_aws_svc_organizations_accounts_list_active() {
 
   p6_aws_svc_organizations_accounts_list | grep ACTIVE
+
+  p6_return_stream
+}
+
+######################################################################
+#<
+#
+# Function: words account_ids = p6_aws_svc_organizations_accounts_list_active_ids()
+#
+#  Returns:
+#	words - account_ids
+#
+#>
+######################################################################
+p6_aws_svc_organizations_accounts_list_active_ids() {
+
+  local account_ids=$(p6_aws_svc_organizations_accounts_list_active | awk '{print $1}' | xargs)
+
+  p6_return_words "$account_ids"
+}
+
+######################################################################
+#<
+#
+# Function: words account_ids = p6_aws_svc_organizations_account_list_active_ids_without_management()
+#
+#  Returns:
+#	words - account_ids
+#
+#>
+######################################################################
+p6_aws_svc_organizations_account_list_active_ids_without_management() {
+
+  local management_account_id=$(p6_aws_svc_organization_management_account_id_get)
+  local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | grep -v "$management_account_id" | xargs)
+
+  p6_return_words "$account_ids"
+}
+
+######################################################################
+#<
+#
+# Function: words account_ids_and_names = p6_aws_svc_organizations_accounts_list_active_ids_and_names()
+#
+#  Returns:
+#	words - account_ids_and_names
+#
+#>
+######################################################################
+p6_aws_svc_organizations_accounts_list_active_ids_and_names() {
+
+    local account_ids_and_names=$(p6_aws_svc_organizations_accounts_list_active | awk '{print $5 "=" $1}')
+
+    p6_return_words "$account_ids_and_names"
 }
 
 ######################################################################

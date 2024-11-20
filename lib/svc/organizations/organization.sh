@@ -28,6 +28,6 @@ p6_aws_svc_organizations_management_account_id_get() {
 
   local master_account_id=$(p6_aws_cli_cmd organizations describe-organization --query "Organization.MasterAccountId" --output text)
 
-  p6_return_aws_account_id "$master_account_id" 
+  p6_return_aws_account_id "$master_account_id"
 }
 

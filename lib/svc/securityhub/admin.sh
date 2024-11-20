@@ -3,7 +3,74 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_securityhub_admin_enable()
+# Function: p6_aws_svc_securityhub_organization_service_enable()
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_organization_service_enable() {
+
+    p6_aws_svc_organization_services_enable securityhub.amazonaws.com
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_organization_service_disable()
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_organization_service_disable() {
+
+    p6_aws_svc_organization_services_disable securityhub.amazonaws.com
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_admin_delegate_register(account_id)
+#
+#  Args:
+#	account_id -
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_admin_delegate_register() {
+    local account_id="$1"
+
+    p6_aws_svc_organizations_admin_delegate_register "$account_id" securityhub.amazonaws.com
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_admin_delegate_deregister(account_id)
+#
+#  Args:
+#	account_id -
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_admin_delegate_deregister() {
+    local account_id="$1"
+
+    p6_aws_svc_organizations_admin_delegate_deregister "$account_id" securityhub.amazonaws.com
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_admin_enable(account_id)
+#
+#  Args:
+#	account_id -
 #
 #>
 ######################################################################
@@ -105,6 +172,62 @@ p6_aws_svc_securityhub_organization_config_update() {
 p6_aws_svc_securityhub_disable() {
 
     p6_aws_cli_cmd securityhub disable-security-hub
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_from_delegated_off()
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_from_delegated_off() {
+
+    p6_aws_svc_securityhub_members_remove
+    p6_aws_svc_securityhub_aggregator_delete
+    p6_aws_svc_securityhub_organization_config_update
+    p6_aws_svc_securityhub_disable
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_from_management_on(account_id)
+#
+#  Args:
+#	account_id -
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_from_management_on() {
+    local account_id="$1"
+
+    p6_aws_svc_securityhub_organization_service_enable
+    p6_aws_svc_securityhub_admin_delegate_register "$account_id"
+    p6_aws_svc_securityhub_admin_enable "$account_id"
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_securityhub_from_management_off(account_id)
+#
+#  Args:
+#	account_id -
+#
+#>
+######################################################################
+p6_aws_svc_securityhub_from_management_off() {
+    local account_id="$1"
+
+    p6_aws_svc_securityhub_admin_delegate_deregister "$account_id"
+    p6_aws_svc_securityhub_organization_service_disable
 
     p6_return_void
 }
