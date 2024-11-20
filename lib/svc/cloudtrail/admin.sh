@@ -3,7 +3,24 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_cloudtrail_admin_delegate_register()
+# Function: p6_aws_svc_cloudtrail_organization_service_enable()
+#
+#>
+######################################################################
+p6_aws_svc_cloudtrail_organization_service_enable() {
+
+    p6_aws_svc_organization_services_enable cloudtrail.amazonaws.com
+
+    p6_return_void
+}
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_cloudtrail_admin_delegate_register(account_id)
+#
+#  Args:
+#	account_id -
 #
 #>
 ######################################################################
