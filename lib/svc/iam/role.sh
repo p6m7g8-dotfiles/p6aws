@@ -49,7 +49,7 @@ p6_aws_svc_iam_roles_list() {
 p6_aws_svc_iam_role_service_linked_created() {
 	local service="$1"
 
-	p6_aws_cli_cmd iam create-service-linked-role --aws-service-name "$service"
+	p6_aws_cli_cmd iam create-service-linked-role --aws-service-name "$service" || true
 
 	p6_return_void
 }
