@@ -3,18 +3,18 @@
 ######################################################################
 #<
 #
-# Function: str account_id = p6_aws_svc_sts_account_id()
+# Function: aws_account_id account_id = p6_aws_svc_sts_account_id()
 #
 #  Returns:
-#	str - account_id
+#	aws_account_id - account_id
 #
 #>
 ######################################################################
 p6_aws_svc_sts_account_id() {
 
-  local account_id=$(p6_aws_svc_sts_whoami |awk '/Account/{ print $2}' | sed -e 's,[,"],,g')
+    local account_id=$(p6_aws_svc_sts_whoami | jq -r ".Account")
 
-  p6_return_str "$account_id"
+    p6_return_aws_account_id "$account_id"
 }
 
 ######################################################################
