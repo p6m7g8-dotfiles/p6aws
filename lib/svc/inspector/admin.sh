@@ -217,7 +217,7 @@ p6_aws_svc_inspector_status_batch_get() {
 ######################################################################
 p6_aws_svc_inspector_organization_members_enable() {
 
-    local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids)
+    local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids_as_list)
     local account_id
     for account_id in $(echo $account_ids); do
         p6_aws_svc_inspector_member_associate "$account_id"
@@ -236,7 +236,7 @@ p6_aws_svc_inspector_organization_members_enable() {
 ######################################################################
 p6_aws_svc_inspector_organization_members_disable() {
 
-    local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids)
+    local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids_as_list)
     local account_id
     for account_id in $(echo $account_ids); do
         p6_aws_svc_inspector_member_remove "$account_id"

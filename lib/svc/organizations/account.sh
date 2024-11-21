@@ -47,9 +47,26 @@ p6_aws_svc_organizations_accounts_list_active() {
 ######################################################################
 p6_aws_svc_organizations_accounts_list_active_ids() {
 
-  local account_ids=$(p6_aws_svc_organizations_accounts_list_active | awk '{print $1}' | xargs)
+  local account_ids=$(p6_aws_svc_organizations_accounts_list_active | awk '{print $1}')
 
   p6_return_words "$account_ids"
+}
+
+######################################################################
+#<
+#
+# Function: list account_ids = p6_aws_svc_organizations_accounts_list_active_ids_as_list()
+#
+#  Returns:
+#	list - account_ids
+#
+#>
+######################################################################
+p6_aws_svc_organizations_accounts_list_active_ids_as_list() {
+
+  local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | xargs)
+
+  p6_return_list "$account_ids"
 }
 
 ######################################################################
@@ -102,6 +119,24 @@ p6_aws_svc_organization_management_account_id_get() {
   local account_id=$(p6_aws_cli_cmd organizations describe-organization --query "Organization.MasterAccountId" --output text)
 
   p6_return_aws_account_id "$account_id"
+}
+
+######################################################################
+#<
+#
+# Function: str account_name = p6_aws_svc_organization_management_account_name_get()
+#
+#  Returns:
+#	str - account_name
+#
+#>
+######################################################################
+p6_aws_svc_organization_management_account_name_get() {
+
+  local management_account_id=$(p6_aws_svc_organization_management_account_id_get)
+  local account_name=$(p6_aws_svc_organizations_account_name_from_account_id $management_account_id)
+
+  p6_return_str "$account_name"
 }
 
 ######################################################################
