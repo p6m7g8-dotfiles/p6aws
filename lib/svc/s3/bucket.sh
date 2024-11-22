@@ -26,7 +26,7 @@ p6_aws_svc_s3_buckets_list() {
 p6_aws_svc_s3_bucket_find_prefix() {
     local prefix="$1"
 
-    local bucket_name=$(p6_aws_svc_s3_buckets_list | awk -v prefix=$prefix '3 ~ prefix { print $3 }')
+    local bucket_name=$(p6_aws_svc_s3_buckets_list | grep "$prefix" | awk '{ print $3 }')
 
     p6_return_str "$bucket_name"
 }
