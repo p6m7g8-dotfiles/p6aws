@@ -66,7 +66,7 @@ p6_aws_svc_organizations_accounts_list_active_ids_as_list() {
 
   local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | xargs)
 
-  p6_return_list "$account_ids"
+  p6_return_words "$account_ids"
 }
 
 ######################################################################
