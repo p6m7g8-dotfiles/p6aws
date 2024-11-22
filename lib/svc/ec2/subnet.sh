@@ -54,7 +54,7 @@ p6_aws_svc_ec2_subnet_ids_get() {
 #>
 ######################################################################
 p6_aws_svc_ec2_subnets_list() {
-    local vpc_id="$2"
+    local vpc_id="$1"
 
     local tag_name
     tag_name=$(p6_aws_cli_jq_tag_name_get)
