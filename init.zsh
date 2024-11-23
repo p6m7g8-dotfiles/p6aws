@@ -9,7 +9,6 @@
 p6df::modules::p6aws::deps() {
   ModuleDeps=(
     p6m7g8-dotfiles/p6common
-    p6m7g8/p6-cirrus
   )
 }
 
