@@ -55,10 +55,10 @@ p6_aws_svc_organizations_accounts_list_active_ids() {
 ######################################################################
 #<
 #
-# Function: list account_ids = p6_aws_svc_organizations_accounts_list_active_ids_as_list()
+# Function: words account_ids = p6_aws_svc_organizations_accounts_list_active_ids_as_list()
 #
 #  Returns:
-#	list - account_ids
+#	words - account_ids
 #
 #>
 ######################################################################
