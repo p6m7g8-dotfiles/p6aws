@@ -180,7 +180,7 @@ p6_aws_svc_ec2_ami_find_freebsd_15_current() {
 #
 #>
 ######################################################################
-p6_aws_svc_ec2_amis_amazon2_latest() {
+p6_aws_svc_ec2_ami_find_amazon2_latest() {
 
 	local ami_id=$(p6_aws_cli_cmd ec2 describe-images \
 		--output text \

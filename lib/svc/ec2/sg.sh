@@ -12,13 +12,14 @@
 p6_aws_svc_ec2_sgs_list() {
     local vpc_id="$1"
 
-    local tag_name
-    tag_name=$(p6_aws_cli_jq_tag_name_get)
+    local tag_name=$(p6_aws_cli_jq_tag_name_get)
 
     p6_aws_cli_cmd ec2 describe-security-groups \
         --output text \
         --filters "Name=vpc-id,Values=$vpc_id" \
         --query "'SecurityGroups[].[GroupId, GroupName, $tag_name]'"
+
+    p6_return_stream
 }
 
 ######################################################################
@@ -62,35 +63,62 @@ p6_aws_svc_ec2_sg_show() {
 #
 #>
 ######################################################################
-p6_aws_svc_ec2_sg_id_from_tag_name() {
+p6_aws_svc_ec2_sg_id_from_sg_tag() {
     local tag_name="$1"
     local vpc_id="$2"
 
-    p6_aws_cli_cmd ec2 describe-security-group \
+    local sg_id=$(p6_aws_cli_cmd ec2 describe-security-group \
         --output text \
         --filters "'Name=tag:Name,Values=$tag_name,Name=vpc-id,Values=$vpc_id'" \
         --query "'SecurityGroups[].[GroupId]'" |
-        tail -1
+        tail -1)
+
+    p6_return_str "$sg_id"
 }
 
-## DEPRECATED -- use tags
 ######################################################################
 #<
 #
-# Function: p6_old_aws_svc_ec2_sg_id_from_group_name(group_name, vpc_id)
+# Function: str sg_id = p6_aws_svc_ec2_sg_id_from_instance_id(instance_id)
 #
 #  Args:
-#	group_name -
-#	vpc_id -
+#	instance_id -
+#
+#  Returns:
+#	str - sg_id
 #
 #>
 ######################################################################
-p6_old_aws_svc_ec2_sg_id_from_group_name() {
-    local group_name="$1"
-    local vpc_id="$2"
+p6_aws_svc_ec2_sg_id_from_instance_id() {
+    local instance_id="$1"
 
-    p6_aws_cli_cmd ec2 describe-security-groups \
-        --output text \
-        --filters "Name=group-name,Values=$group_name,Name=vpc-id,Values=$vpc_id" \
-        --query "'SecurityGroups[].[GroupId]'"
+    local sg_id=$(p6_aws_cli_cmd ec2 describe-instances \
+            --instance-ids "$instance_id" \
+            --query "Reservations[0].Instances[0].SecurityGroups[0].GroupId" \
+            --output text)
+
+    p6_return_str "$sg_id"
+}
+
+
+######################################################################
+#<
+#
+# Function: str sg_id = p6_aws_svc_ec2_sg_id_from_instance_tag(tag)
+#
+#  Args:
+#	tag -
+#
+#  Returns:
+#	str - sg_id
+#
+#>
+######################################################################
+p6_aws_svc_ec2_sg_id_from_instance_tag() {
+    local tag="$1"
+
+    local instance_id=$(p6_aws_svc_ec2_instance_id_from_name_tag "$tag")
+    p6_aws_svc_ec2_sg_id_from_instance_id "$instance_id"
+
+    p6_return_str "$sg_id"
 }
