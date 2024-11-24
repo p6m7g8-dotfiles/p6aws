@@ -60,7 +60,7 @@ p6_aws_svc_autoscaling_asg_act_list() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_autoscaling_asg_act_deltailed_list(asg_name)
+# Function: p6_aws_svc_autoscaling_asg_act_detailed_list(asg_name)
 #
 #  Args:
 #	asg_name -

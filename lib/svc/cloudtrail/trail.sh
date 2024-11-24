@@ -1,7 +1,10 @@
 ######################################################################
 #<
 #
-# Function: stream  = p6_aws_svc_cloudtrail_trail_arns()
+# Function: stream  = p6_aws_svc_cloudtrail_trail_arns([prefix=.])
+#
+#  Args:
+#	OPTIONAL prefix - [.]
 #
 #  Returns:
 #	stream - 
