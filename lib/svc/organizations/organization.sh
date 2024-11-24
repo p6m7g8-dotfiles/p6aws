@@ -31,3 +31,20 @@ p6_aws_svc_organizations_management_account_id_get() {
   p6_return_aws_account_id "$master_account_id"
 }
 
+######################################################################
+#<
+#
+# Function: str management_account_name = p6_aws_svc_organizations_management_account_name_get()
+#
+#  Returns:
+#	str - management_account_name
+#
+#>
+######################################################################
+p6_aws_svc_organizations_management_account_name_get() {
+
+  local management_account_name=$(p6_aws_cli_cmd organizations describe-organization --query "Organization.MasterAccountEmail" --output text |awk -F'@' '{print $2}' | awk -F'.' '{print $1}')
+
+  p6_return_str "$management_account_name"
+}
+

@@ -142,7 +142,9 @@ p6_aws_svc_securityhub_members_remove() {
 p6_aws_svc_securityhub_aggregator_delete() {
 
     local arn=$(p6_aws_svc_securityhub_aggregator_arn)
-    p6_aws_cli_cmd securityhub delete-finding-aggregator --finding-aggregator-arn "$arn"
+    if ! p6_string_blank "$arn"; then
+      p6_aws_cli_cmd securityhub delete-finding-aggregator --finding-aggregator-arn "$arn"
+    fi
 
     p6_return_void
 }
