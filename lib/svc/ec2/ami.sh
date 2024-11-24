@@ -173,7 +173,7 @@ p6_aws_svc_ec2_ami_find_freebsd_15_current() {
 ######################################################################
 #<
 #
-# Function: str ami_id = p6_aws_svc_ec2_amis_amazon2_latest()
+# Function: str ami_id = p6_aws_svc_ec2_ami_find_amazon2_latest()
 #
 #  Returns:
 #	str - ami_id

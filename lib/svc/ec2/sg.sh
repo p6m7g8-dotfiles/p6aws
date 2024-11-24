@@ -2,10 +2,13 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_sgs_list(vpc_id)
+# Function: stream  = p6_aws_svc_ec2_sgs_list(vpc_id)
 #
 #  Args:
 #	vpc_id -
+#
+#  Returns:
+#	stream - 
 #
 #>
 ######################################################################
@@ -55,11 +58,14 @@ p6_aws_svc_ec2_sg_show() {
 ######################################################################
 #<
 #
-# Function: p6_aws_svc_ec2_sg_id_from_tag_name(tag_name, vpc_id)
+# Function: str sg_id = p6_aws_svc_ec2_sg_id_from_sg_tag(tag_name, vpc_id)
 #
 #  Args:
 #	tag_name -
 #	vpc_id -
+#
+#  Returns:
+#	str - sg_id
 #
 #>
 ######################################################################

@@ -33,3 +33,21 @@ p6_aws_svc_cloudtrail_trail_logging_start() {
 
   p6_return_void
 }
+
+######################################################################
+#<
+#
+# Function: p6_aws_svc_cloudtrail_trail_delete(trail_arn)
+#
+#  Args:
+#	trail_arn -
+#
+#>
+######################################################################
+p6_aws_svc_cloudtrail_trail_delete() {
+  local trail_arn="$1"
+
+  p6_aws_cli_cmd cloudtrail delete-trail --name "$trail_arn"
+
+  p6_return_void
+}
