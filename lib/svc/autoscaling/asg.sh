@@ -67,7 +67,7 @@ p6_aws_svc_autoscaling_asg_act_list() {
 #
 #>
 ######################################################################
-p6_aws_svc_autoscaling_asg_act_deltailed_list() {
+p6_aws_svc_autoscaling_asg_act_detailed_list() {
     local asg_name="$1"
 
     p6_aws_cli_cmd autoscaling describe-scaling-activities \
