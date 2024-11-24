@@ -58,6 +58,25 @@ p6_return_aws_account_id() {
 ######################################################################
 #<
 #
+# Function: str subnet_id = p6_return_aws_subnet_id(subnet_id)
+#
+#  Args:
+#	subnet_id -
+#
+#  Returns:
+#	str - subnet_id
+#
+#>
+######################################################################
+p6_return_aws_subnet_id() {
+    local subnet_id="$1"
+
+    p6_return_str "$subnet_id"
+}
+
+######################################################################
+#<
+#
 # Function: str resource_id = p6_return_aws_resource_id(resource_id)
 #
 #  Args:
