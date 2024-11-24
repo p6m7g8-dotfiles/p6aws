@@ -73,11 +73,10 @@ p6_aws_svc_ec2_sg_id_from_sg_tag() {
     local tag_name="$1"
     local vpc_id="$2"
 
-    local sg_id=$(p6_aws_cli_cmd ec2 describe-security-group \
+    local sg_id=$(p6_aws_cli_cmd ec2 describe-security-groups \
         --output text \
-        --filters "'Name=tag:Name,Values=$tag_name,Name=vpc-id,Values=$vpc_id'" \
-        --query "'SecurityGroups[].[GroupId]'" |
-        tail -1)
+        --filters "Name=tag:Name,Values=${tag_name}" "Name=vpc-id,Values=${vpc_id}" \
+        --query "'SecurityGroups[0].GroupId'")
 
     p6_return_str "$sg_id"
 }
