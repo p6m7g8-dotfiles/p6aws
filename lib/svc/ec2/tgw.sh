@@ -1,20 +1,4 @@
 # shellcheck shell=bash
-# describe-transit-gateway-attachments
-# describe-transit-gateway-connect-peers
-# describe-transit-gateway-connects
-# describe-transit-gateway-multicast-domains
-# describe-transit-gateway-peering-attachments
-# describe-transit-gateway-route-tables
-# describe-transit-gateway-vpc-attachments
-# export-transit-gateway-routes
-# get-transit-gateway-attachment-propagations
-# get-transit-gateway-multicast-domain-associations
-# get-transit-gateway-prefix-list-references
-# get-transit-gateway-route-table-associations
-# get-transit-gateway-route-table-propagations
-# search-transit-gateway-multicast-groups
-# search-transit-gateway-routes
-
 ######################################################################
 #<
 #
