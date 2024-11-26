@@ -12,7 +12,8 @@ p6_aws_svc_organizations_accounts_list() {
 
   p6_aws_cli_cmd organizations list-accounts \
     --output text \
-    --query "'Accounts[].[Id, Status, JoinedMethod, Arn, Name, Email]'"
+    --query "'Accounts[].[Id, Status, JoinedMethod, Arn, Name, Email]'" |
+    sort
 
   p6_return_stream
 }
