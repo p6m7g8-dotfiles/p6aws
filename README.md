@@ -8,6 +8,7 @@
 [![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/p6m7g8/p6aws/&style=flat)](https://mergify.io)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com/p6m7g8/p6aws>)
 
+
 ## Summary
 
 ## Contributing
@@ -335,6 +336,7 @@
 ### p6aws/lib/svc/ec2/vpc.sh
 
 - p6_aws_svc_ec2_vpcs_list()
+- str vpc_id = p6_aws_svc_ec2_vpc_id_from_vpc_name(vpc_name)
 
 ## svc/eks
 
@@ -602,6 +604,7 @@
 - str organization_id = p6_return_aws_organization_id(organization_id)
 - str profile = p6_return_aws_profile(profile)
 - str resource_id = p6_return_aws_resource_id(resource_id)
+- str subnet_id = p6_return_aws_subnet_id(subnet_id)
 
 ### p6aws/lib/util/template.sh
 
