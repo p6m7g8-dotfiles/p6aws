@@ -8,7 +8,6 @@
 [![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/p6m7g8/p6aws/&style=flat)](https://mergify.io)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com/p6m7g8/p6aws>)
 
-
 ## Summary
 
 ## Contributing
