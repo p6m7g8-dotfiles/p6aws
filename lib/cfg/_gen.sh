@@ -9,6 +9,8 @@ p6_aws_cfg__generate() {
 
     local var
     rm -f lib/env/*.sh
+    rm -f t/cfg-*.t
+
     for var in $(p6_aws_cfg_vars | sort); do
         local var_lc=$(p6_string_lc "$var")
         local fname=$(p6_string_replace "$var_lc" "aws_" "")

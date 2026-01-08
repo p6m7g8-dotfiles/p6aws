@@ -5,19 +5,16 @@
 ## Badges
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellowgreen.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Mergify](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/p6m7g8/p6aws/&style=flat)](https://mergify.io)
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](<https://gitpod.io/#https://github.com/p6m7g8/p6aws>)
-
 
 ## Summary
 
 ## Contributing
 
-- [How to Contribute](<https://github.com/p6m7g8/.github/blob/main/CONTRIBUTING.md>)
+- [How to Contribute](<https://github.com//.github/blob/main/CONTRIBUTING.md>)
 
 ## Code of Conduct
 
-- [Code of Conduct](<https://github.com/p6m7g8/.github/blob/main/CODE_OF_CONDUCT.md>)
+- [Code of Conduct](<https://github.com//.github/blob/main/CODE_OF_CONDUCT.md>)
 
 ## Usage
 
@@ -614,7 +611,6 @@
 
 ```text
 .
-├── README.md
 ├── init.zsh
 ├── lib
 │   ├── cfg
@@ -739,6 +735,7 @@
 │       ├── env.sh
 │       ├── p6_return.sh
 │       └── template.sh
+├── README.md
 ├── t
 │   ├── cfg-access_key_id-active.t
 │   ├── cfg-access_key_id-saved.t
@@ -767,12 +764,12 @@
 │   ├── cfg-eks_cluster_name-active.t
 │   ├── cfg-eks_cluster_name-saved.t
 │   ├── cfg-eks_cluster_name-source.t
-│   ├── cfg-env-active.t
-│   ├── cfg-env-saved.t
-│   ├── cfg-env-source.t
 │   ├── cfg-env_tag-active.t
 │   ├── cfg-env_tag-saved.t
 │   ├── cfg-env_tag-source.t
+│   ├── cfg-env-active.t
+│   ├── cfg-env-saved.t
+│   ├── cfg-env-source.t
 │   ├── cfg-login_default_sso_region-active.t
 │   ├── cfg-login_default_sso_region-saved.t
 │   ├── cfg-login_default_sso_region-source.t
@@ -828,10 +825,10 @@
     ├── ec2
     │   └── launch_configuration.json
     ├── iam
-    │   ├── cloudtrail.json
     │   ├── cloudtrail_events.json
-    │   ├── kms.json
+    │   ├── cloudtrail.json
     │   ├── kms_cloudtrail.json
+    │   ├── kms.json
     │   ├── s3_cloudtrail.json
     │   ├── saml.json
     │   └── service.json
