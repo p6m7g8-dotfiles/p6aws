@@ -67,7 +67,6 @@ p6_aws_cfg_realize() {
 #
 # Function: p6_aws_cfg_show()
 #
-#  Environment:	 AWS_
 #>
 ######################################################################
 p6_aws_cfg_show() {

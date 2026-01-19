@@ -10,7 +10,7 @@
 #  Returns:
 #	str - user
 #
-#  Environment:	 RHEL USER WIN
+#  Environment:	 USER
 #>
 ######################################################################
 p6_aws_svc_ec2_user_from_ami_name() {
@@ -160,7 +160,6 @@ p6_aws_svc_ec2_ami_find_id() {
 #  Returns:
 #	str - ami_id
 #
-#  Environment:	 BSD _15_
 #>
 ######################################################################
 p6_aws_svc_ec2_ami_find_freebsd_15_current() {

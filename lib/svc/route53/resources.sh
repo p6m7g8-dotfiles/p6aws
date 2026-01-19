@@ -7,7 +7,6 @@
 #  Args:
 #	zone -
 #
-#  Environment:	 RESOURCERECORDS
 #>
 ######################################################################
 p6_aws_svc_route53_resources_list() {

@@ -7,7 +7,6 @@
 #  Args:
 #	log_group_name -
 #
-#  Environment:	 ALL
 #>
 ######################################################################
 p6_aws_svc_logs_watch() {

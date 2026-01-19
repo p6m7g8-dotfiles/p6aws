@@ -63,7 +63,6 @@ p6_aws_cfg__generate_kinds() {
 #  Returns:
 #	str - code
 #
-#  Environment:	 FUNC VAR
 #>
 ######################################################################
 p6_aws_cfg__accessor() {
@@ -101,7 +100,6 @@ p6_aws_cfg__accessor() {
 #  Returns:
 #	str - code
 #
-#  Environment:	 FUNC
 #>
 ######################################################################
 p6_aws_cfg__taccessor() {

@@ -26,7 +26,6 @@ p6_aws_svc_organizations_accounts_list() {
 #  Returns:
 #	stream - 
 #
-#  Environment:	 ACTIVE
 #>
 ######################################################################
 p6_aws_svc_organizations_accounts_list_active() {

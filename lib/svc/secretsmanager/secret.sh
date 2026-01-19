@@ -3,7 +3,6 @@
 #
 # Function: p6_aws_svc_secretsmanager_list()
 #
-#  Environment:	 ARN
 #>
 ######################################################################
 p6_aws_svc_secretsmanager_list() {

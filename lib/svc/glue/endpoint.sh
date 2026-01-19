@@ -5,7 +5,6 @@
 #
 # Function: p6_aws_svc_glue_crawlers_arn_list()
 #
-#  Environment:	 START
 #>
 ######################################################################
 p6_aws_svc_glue_crawlers_arn_list() {

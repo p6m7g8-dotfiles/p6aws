@@ -5,7 +5,6 @@
 #
 # Function: p6_aws_svc_rds_instance_arns_list()
 #
-#  Environment:	 DBI
 #>
 ######################################################################
 p6_aws_svc_rds_instance_arns_list() {
