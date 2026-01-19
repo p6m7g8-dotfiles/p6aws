@@ -25,7 +25,6 @@ p6_aws_svc_sts_account_id() {
 #  Returns:
 #	str - role_name
 #
-#  Environment:	 AWSR
 #>
 ######################################################################
 p6_aws_svc_sts_account_role_name() {

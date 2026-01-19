@@ -24,7 +24,6 @@ p6_aws_svc_autoscaling_asg_target_group_arn() {
 #
 # Function: p6_aws_svc_autoscaling_asgs_list()
 #
-#  Environment:	 VPCZ
 #>
 ######################################################################
 p6_aws_svc_autoscaling_asgs_list() {

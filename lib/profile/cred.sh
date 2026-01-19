@@ -5,7 +5,6 @@
 #
 # Function: p6_aws_profile_cred_add()
 #
-#  Environment:	 AWS_ACCESS_KEY AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN EXPIRATION PROFILE
 #>
 ######################################################################
 p6_aws_profile_cred_add() {

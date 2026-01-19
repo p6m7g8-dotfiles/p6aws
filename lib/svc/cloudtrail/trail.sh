@@ -9,7 +9,6 @@
 #  Returns:
 #	stream - 
 #
-#  Environment:	 ARN
 #>
 ######################################################################
 p6_aws_svc_cloudtrail_trail_arns() {
