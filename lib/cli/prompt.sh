@@ -23,7 +23,7 @@ p6_aws_cfg_prompt_info() {
 
     local str
     if ! p6_string_blank "$org"; then
-        str="aws:\t\t  org:$org"
+        str="org:$org"
     fi
     if ! p6_string_blank "$profile"; then
         kind=${kind/_/}
