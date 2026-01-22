@@ -755,6 +755,7 @@ TODO: Add a short summary of this module.
 │   ├── cfg-access_key_id-active.t
 │   ├── cfg-access_key_id-saved.t
 │   ├── cfg-access_key_id-source.t
+│   ├── cfg-api.t
 │   ├── cfg-ca_bundle-active.t
 │   ├── cfg-ca_bundle-saved.t
 │   ├── cfg-ca_bundle-source.t
@@ -785,6 +786,8 @@ TODO: Add a short summary of this module.
 │   ├── cfg-env-active.t
 │   ├── cfg-env-saved.t
 │   ├── cfg-env-source.t
+│   ├── cfg-gen.t
+│   ├── cfg-kinds.t
 │   ├── cfg-login_default_sso_region-active.t
 │   ├── cfg-login_default_sso_region-saved.t
 │   ├── cfg-login_default_sso_region-source.t
@@ -830,9 +833,21 @@ TODO: Add a short summary of this module.
 │   ├── cfg-sso_start_url-active.t
 │   ├── cfg-sso_start_url-saved.t
 │   ├── cfg-sso_start_url-source.t
+│   ├── cfg-vars.t
 │   ├── cfg-vpc_id-active.t
 │   ├── cfg-vpc_id-saved.t
-│   └── cfg-vpc_id-source.t
+│   ├── cfg-vpc_id-source.t
+│   ├── cli-basic.t
+│   ├── cli-organizations.t
+│   ├── cli-shortcuts.t
+│   ├── debug.t
+│   ├── init.t
+│   ├── profile.t
+│   ├── svc-iam-policy.t
+│   ├── svc-sts.t
+│   ├── util-env.t
+│   ├── util-return.t
+│   └── util-template.t
 └── tmpl
     ├── cfg
     │   ├── accessor.tmpl
@@ -853,7 +868,7 @@ TODO: Add a short summary of this module.
         ├── conf
         └── cred
 
-46 directories, 181 files
+46 directories, 196 files
 ```
 
 ## Author
