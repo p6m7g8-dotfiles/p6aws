@@ -3,7 +3,15 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_profile_cred_add()
+# Function: p6_aws_profile_cred_add(cred_file, profile, access_key_id, secret_access_key, session_token, expiration)
+#
+#  Args:
+#	cred_file -
+#	profile -
+#	access_key_id -
+#	secret_access_key -
+#	session_token -
+#	expiration -
 #
 #>
 ######################################################################

@@ -3,7 +3,11 @@
 ######################################################################
 #<
 #
-# Function: p6_aws_profile_config_add()
+# Function: p6_aws_profile_config_add(conf_file, profile)
+#
+#  Args:
+#	conf_file -
+#	profile -
 #
 #>
 ######################################################################
@@ -37,7 +41,7 @@ p6_aws_profile_config_list() {
     local conf_file
     conf_file=$(p6_aws_env_config_file_active)
 
-    profiles=$(grep '^\[' "$conf_file" | sed -e 's,\[profile ,,' -e 's,\],,' | grep -v default | sort)
+    profiles=$(p6_file_display "$conf_file" | p6_filter_row_select "^\[" | p6_filter_row_exclude "default" | p6_filter_extract_after "profile " | p6_filter_extract_before "]" | p6_filter_sort)
 
     p6_return_words "$profiles"
 }

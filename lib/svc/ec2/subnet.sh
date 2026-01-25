@@ -38,7 +38,7 @@ p6_aws_svc_ec2_subnet_ids_get() {
     local vpc_id="$2"
 
     local subnet_ids
-    subnet_ids=$(p6_aws_svc_ec2_subnets_list "$vpc_id" | awk "/$subnet_type/ { print \$1 }")
+    subnet_ids=$(p6_aws_svc_ec2_subnets_list "$vpc_id" | p6_filter_row_select "$subnet_type" | p6_filter_column_pluck 1)
 
     p6_return_words "$subnet_ids"
 }

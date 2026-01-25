@@ -16,9 +16,9 @@ p6_aws_svc_glue_crawlers_arn_list() {
         p6_aws_cli_cmd glue list-crawlers >$dir/crawlers.json
         next_token=$(cat $dir/crawlers.json | jq -r ".NextToken")
         p6_file_display "$dir/crawlers.json" | jq -r ".CrawlerNames"
-    done | grep -v "\[" |
-        grep -v "\]" |
-        sed -e 's,",,g' -e 's/,//g'
+    done | p6_filter_row_exclude "\\[" |
+        p6_filter_row_exclude "\\]" |
+        p6_filter_strip_chars '",'
 
     p6_return_void
 }

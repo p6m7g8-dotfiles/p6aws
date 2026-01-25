@@ -12,7 +12,7 @@ p6_aws_svc_ec2_regions_iterator() {
     local region
     for region in $(p6_aws_svc_ec2_regions_list); do
         p6_aws_env_region_active "$region" >/dev/null
-        p6_run_code "$@" | sed -e "s,^,$region\t,"
+        p6_run_code "$@" | p6_filter_translate_start_to_arg "$region\t"
     done
 
     p6_aws_env_region_active "$save_region" >/dev/null
@@ -31,5 +31,5 @@ p6_aws_svc_ec2_regions_list() {
         --output text \
         --filters Name="'region-name,Values=us-*'" \
         --query "'Regions[].[RegionName]'" |
-        sort
+        p6_filter_sort
 }

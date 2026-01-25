@@ -115,15 +115,11 @@ p6_aws_cfg_vars() {
 ######################################################################
 #<
 #
-# Function: code rc = p6_aws_cfg_vars_filter_secret(val)
+# Function: p6_aws_cfg_vars_filter_secret(val)
 #
 #  Args:
 #	val -
 #
-#  Returns:
-#	code - rc
-#
-#  Environment:	 P6_FALSE P6_TRUE
 #>
 ######################################################################
 p6_aws_cfg_vars_filter_secret() {

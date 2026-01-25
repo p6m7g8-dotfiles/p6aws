@@ -24,12 +24,12 @@ main() {
         p6_aws_profile_config_add "$conf" "dev"
 
         p6_test_assert_file_exists "$conf" "config file created"
-        grep -q "\[profile dev\]" "$conf" >/dev/null
+        p6_filter_row_select_regex "\[profile dev\]" < "$conf" >/dev/null
         p6_test_assert_eq "$?" "0" "config has profile"
 
         p6_aws_env_config_file_active "$conf" >/dev/null
         profiles=$(p6_aws_profile_config_list)
-        echo "$profiles" | grep -q "dev" >/dev/null
+        p6_echo "$profiles" | p6_filter_row_select "dev" >/dev/null
         p6_test_assert_eq "$?" "0" "config list returns profile"
     )
     p6_test_finish

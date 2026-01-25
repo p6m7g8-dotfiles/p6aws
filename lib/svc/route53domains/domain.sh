@@ -24,7 +24,7 @@ p6_aws_svc_route53_domains_list() {
 ######################################################################
 p6_aws_svc_route53_domains_list_not_locked() {
 
-    p6_aws_svc_route53_domains_list | awk '$3 == "False"'
+    p6_aws_svc_route53_domains_list | p6_filter_row_select_regex '^[^ ]+ [^ ]+ False$'
 }
 
 ######################################################################
@@ -36,7 +36,7 @@ p6_aws_svc_route53_domains_list_not_locked() {
 ######################################################################
 p6_aws_svc_route53_domains_list_not_autorenew() {
 
-    p6_aws_svc_route53_domains_list | awk '$2 == "False"'
+    p6_aws_svc_route53_domains_list | p6_filter_row_select_regex '^[^ ]+ False '
 }
 
 ######################################################################
@@ -70,7 +70,7 @@ p6_aws_svc_route53_domains_details() {
 p6_aws_svc_route53_domains_nameservers_api() {
     local domain_name="$1"
 
-    p6_aws_svc_route53_domains_details "$domain_name" --region us-east-1 --output text --query "'Nameservers'" | tr 'A-Z' 'a-z' | sort -u
+    p6_aws_svc_route53_domains_details "$domain_name" --region us-east-1 --output text --query "'Nameservers'" | p6_filter_lowercase | p6_filter_sort_unique
 }
 
 ######################################################################
@@ -86,7 +86,7 @@ p6_aws_svc_route53_domains_nameservers_api() {
 p6_aws_svc_route53_domains_nameservers_whois() {
     local domain_name="$1"
 
-    whois "$domain_name" | awk -F: '/Name Server/ {print $2}' | dos2unix | sed -e 's, *,,g' | tr 'A-Z' 'a-z' | sort -u
+    whois "$domain_name" | p6_filter_row_select "Name Server" | p6_filter_column_pluck 2 ":" | p6_filter_dos2unix | p6_filter_strip_spaces | p6_filter_lowercase | p6_filter_sort_unique
 }
 
 ######################################################################

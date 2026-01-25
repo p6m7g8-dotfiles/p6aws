@@ -14,7 +14,7 @@ p6_aws_svc_logs_trail_watch_jq() {
 
     p6_aws_svc_logs_watch "$log_group_name" |
         while read -r line; do
-            json=$(echo "$line" | sed 's/^[^{]*//')
+            json=$(p6_echo "$line" | p6_filter_extract_after "{" | p6_filter_translate_start_to_arg "{")
             echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
             echo "$json" | jq '.'
             echo "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<"

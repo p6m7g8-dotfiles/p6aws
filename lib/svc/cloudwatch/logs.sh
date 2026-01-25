@@ -24,5 +24,5 @@ p6_aws_svc_logs_watch() {
 ######################################################################
 p6_aws_svc_logs_groups_list() {
 
-    p6_aws_cli_cmd logs describe-log-groups --query "'logGroups[].[creationTime,logGroupName]'" --output text |sort -n -k 1,1
+    p6_aws_cli_cmd logs describe-log-groups --query "'logGroups[].[creationTime,logGroupName]'" --output text | p6_filter_sort_numeric_by_column 1
 }

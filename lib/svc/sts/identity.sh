@@ -39,9 +39,9 @@ p6_aws_svc_sts_identity_broker_custom_login_url() {
     local session_token
 
     # Parse (depends on file having only 1 profile; which it does)
-    access_key_id=$(awk '/access_key_id/ { print $3 }' <"$cred_file")
-    secret_access_key=$(awk '/secret_access_key/ { print $3 }' <"$cred_file")
-    session_token=$(awk '/session_token/ { print $3 }' <"$cred_file")
+    access_key_id=$(p6_file_display "$cred_file" | p6_filter_row_select "access_key_id" | p6_filter_column_pluck 3)
+    secret_access_key=$(p6_file_display "$cred_file" | p6_filter_row_select "secret_access_key" | p6_filter_column_pluck 3)
+    session_token=$(p6_file_display "$cred_file" | p6_filter_row_select "session_token" | p6_filter_column_pluck 3)
 
     # string
     local str
