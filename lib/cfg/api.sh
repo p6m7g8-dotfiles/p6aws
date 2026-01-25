@@ -39,8 +39,8 @@ p6_aws_cfg_realize() {
                 if p6_string_eq "$section" "$profile"; then
                     local key
                     local val
-                    key=$(echo "$line" | cut -d = -f 1 | sed -e 's, *,,g')
-                    val=$(echo "$line" | cut -d = -f 2 | sed -e 's, *,,g')
+                    key=$(p6_echo "$line" | p6_filter_column_pluck 1 "=" | p6_filter_strip_spaces)
+                    val=$(p6_echo "$line" | p6_filter_column_pluck 2 "=" | p6_filter_strip_spaces)
 
 		    case $key in
                     *region*) p6_aws_util_env_region "$val" ;;
@@ -88,7 +88,7 @@ p6_aws_cfg_reset() {
 
     local kv
     for kv in $(p6_aws_cfg_show); do
-        local k=$(p6_echo $kv | cut -f 1 -d '=')
+        local k=$(p6_echo $kv | p6_filter_column_pluck 1 "=")
         p6_env_export_un "$k"
     done
 
@@ -108,8 +108,8 @@ p6_aws_cfg_reset() {
 p6_aws_cfg_clear() {
 
     local kv
-    for kv in $(p6_aws_cfg_show | grep -v _saved); do
-        local k=$(p6_echo $kv | cut -f 1 -d '=')
+    for kv in $(p6_aws_cfg_show | p6_filter_row_exclude "_saved"); do
+        local k=$(p6_echo $kv | p6_filter_column_pluck 1 "=")
         p6_env_export_un "$k"
     done
 

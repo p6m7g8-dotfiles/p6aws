@@ -22,10 +22,10 @@ p6_aws_svc_lambda_functions_list() {
 p6_aws_svc_lambda_functions_runtimes() {
 
     p6_aws_svc_lambda_functions_list |
-        awk '{ print $4 }' |
-        sort |
-        uniq -c |
-        sort -nr
+        p6_filter_column_pluck 4 |
+        p6_filter_sort |
+        p6_filter_aggregate_count |
+        p6_filter_sort_numeric_reverse
 }
 
 ######################################################################

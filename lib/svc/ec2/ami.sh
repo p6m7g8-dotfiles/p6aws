@@ -97,7 +97,7 @@ p6_aws_svc_ec2_amis_mine_list() {
 		--output text \
 		--owners self \
 		--query "'Images[].[CreationDate, ImageId, Public, RootDeviceName, RootDeviceType, VirtualizationType, ImageLocation, $tag_name]'" |
-		sort -k 2
+		p6_filter_sort_by_column 2
 
 	p6_return_stream
 }
@@ -119,7 +119,7 @@ p6_aws_svc_ec2_amis_list() {
 	p6_aws_cli_cmd ec2 describe-images \
 		--output text \
 		--query "'Images[].[CreationDate, ImageId, Public, RootDeviceName, RootDeviceType, VirtualizationType, ImageLocation, $tag_name]'" |
-		sort -k 2
+		p6_filter_sort_by_column 2
 
     p6_return_stream
 }
@@ -144,9 +144,9 @@ p6_aws_svc_ec2_ami_find_id() {
 		--output text \
 		--filters "Name=name,Values=$glob" \
 		--query "Images[*].[Name,ImageId]" |
-		sort -k 1,1 |
+		p6_filter_sort_by_column 1 |
 		tail -1 |
-		sed -e 's,.*ami-,ami-,'
+		p6_filter_extract_after "ami-" | p6_filter_translate_start_to_arg "ami-"
 	)
 
 	p6_return_str "$ami_id"
@@ -185,7 +185,7 @@ p6_aws_svc_ec2_ami_find_amazon2_latest() {
 		--output text \
 		--query "'Images[].[ImageId]'" \
 		--filters "'Name=name,Values=amzn2-ami-hvm-*gp2'" |
-		sort -r -k 1,1 |
+		p6_filter_sort_reverse_by_column 1 |
 		tail -1)
 
 	p6_return_str "$ami_id"

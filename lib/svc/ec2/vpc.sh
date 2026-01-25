@@ -34,7 +34,7 @@ p6_aws_svc_ec2_vpcs_list() {
 p6_aws_svc_ec2_vpc_id_from_vpc_name() {
     local vpc_name="$1"
 
-    local vpc_id=$(p6_aws_svc_ec2_vpcs_list | awk -v name="$vpc_name" '$4 == name { print $1 }')
+    local vpc_id=$(p6_aws_svc_ec2_vpcs_list | p6_filter_row_select " ${vpc_name}$" | p6_filter_column_pluck 1)
 
     p6_return_str "$vpc_id"
 }

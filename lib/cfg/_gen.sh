@@ -11,9 +11,9 @@ p6_aws_cfg__generate() {
     rm -f lib/env/*.sh
     rm -f t/cfg-*.t
 
-    for var in $(p6_aws_cfg_vars | sort); do
-        local var_lc=$(p6_string_lc "$var")
-        local fname=$(p6_string_replace "$var_lc" "aws_" "")
+    for var in $(p6_aws_cfg_vars | p6_filter_sort); do
+        local var_norm=$(p6_string_lc "$var")
+        local fname=$(p6_string_strip_prefix "$var_norm" "aws_")
 
         p6_aws_cfg__generate_kinds "$fname" "$var"
     done
@@ -37,8 +37,8 @@ p6_aws_cfg__generate_kinds() {
     local var="$2"
 
     local kind
-    for kind in $(p6_aws_cfg_kinds | sort); do
-        local fkind=$(p6_echo "$kind" | sed -e 's,^_,,')
+    for kind in $(p6_aws_cfg_kinds | p6_filter_sort); do
+        local fkind=$(p6_string_strip_prefix "$kind" "_")
 
         local func=$(p6_aws_cfg__accessor "$kind" "$fname" "$var")
         p6_msg "$func" >>"lib/env/${fkind}.sh"

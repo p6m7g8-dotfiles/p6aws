@@ -56,7 +56,7 @@ TODO: Add a short summary of this module.
 
 ##### p6aws/lib/cfg/vars.sh
 
-- `code rc = p6_aws_cfg_vars_filter_secret(val)`
+- `p6_aws_cfg_vars_filter_secret(val)`
 - `words env_vars = p6_aws_cfg_vars()`
 - `words env_vars = p6_aws_cfg_vars_config()`
 - `words env_vars = p6_aws_cfg_vars_min()`
@@ -67,7 +67,7 @@ TODO: Add a short summary of this module.
 
 ##### p6aws/lib/cli/cli.sh
 
-- `code rc = p6_aws_cli_cmd(service, cmd, ...)`
+- `p6_aws_cli_cmd(service, cmd, ...)`
 - `p6_aws_cli_qload(dir)`
 - `str str = p6_aws_cli_jq_tag_name_get()`
 
@@ -191,12 +191,12 @@ TODO: Add a short summary of this module.
 
 ##### p6aws/lib/profile/config.sh
 
-- `p6_aws_profile_config_add()`
+- `p6_aws_profile_config_add(conf_file, profile)`
 - `words profiles = p6_aws_profile_config_list()`
 
 ##### p6aws/lib/profile/cred.sh
 
-- `p6_aws_profile_cred_add()`
+- `p6_aws_profile_cred_add(cred_file, profile, access_key_id, secret_access_key, session_token, expiration)`
 
 #### svc/autoscaling
 
@@ -610,12 +610,12 @@ TODO: Add a short summary of this module.
 
 ##### p6aws/lib/util/p6_return.sh
 
-- `str account_id = p6_return_aws_account_id(account_id)`
-- `str arn = p6_return_aws_arn(arn)`
-- `str logical_id = p6_return_aws_logical_id(logical_id)`
+- `aws_account_id  = p6_return_aws_account_id(account_id)`
+- `aws_arn  = p6_return_aws_arn(arn)`
+- `aws_logical_id  = p6_return_aws_logical_id(logical_id)`
+- `aws_resource_id  = p6_return_aws_resource_id(resource_id)`
 - `str organization_id = p6_return_aws_organization_id(organization_id)`
 - `str profile = p6_return_aws_profile(profile)`
-- `str resource_id = p6_return_aws_resource_id(resource_id)`
 - `str subnet_id = p6_return_aws_subnet_id(subnet_id)`
 
 ##### p6aws/lib/util/template.sh

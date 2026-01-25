@@ -29,7 +29,7 @@ p6_aws_svc_sts_account_id() {
 ######################################################################
 p6_aws_svc_sts_account_role_name() {
 
-  local role_name=$(p6_aws_svc_sts_whoami |awk '/Arn/{ print $2}'  |sed -e 's,.*AWSReservedSSO_,,' -e 's,_.*,,')
+  local role_name=$(p6_aws_svc_sts_whoami | p6_filter_row_select "Arn" | p6_filter_column_pluck 2 | p6_filter_extract_after "AWSReservedSSO_" | p6_filter_extract_before "_")
 
   p6_return_str "$role_name"
 }

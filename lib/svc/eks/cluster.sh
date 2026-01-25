@@ -40,7 +40,7 @@ p6_aws_svc_eks_cluster_find() {
   local glob="$1"
 
   local cluster_name=$(
-    p6_aws_cli_cmd eks list-clusters --query "'clusters[*]'" --output text | grep "$glob"
+    p6_aws_cli_cmd eks list-clusters --query "'clusters[*]'" --output text | p6_filter_row_select "$glob"
   )
 
   p6_return_str "$cluster_name"

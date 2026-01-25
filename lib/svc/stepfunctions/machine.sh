@@ -35,10 +35,7 @@ p6_aws_svc_stepfunctions_state_machine_show() {
         $state_machine \
         "$@" >$dir/response
 
-    grep definition $dir/response |
-        sed -e 's, "definition": ,,' |
-        sed -e 's,\\,,g' -e 's,"{,{,g' -e 's,}",},g' -e 's/,$//' |
-        python -mjson.tool
+    jq -r '.definition' "$dir/response" | python -mjson.tool
 
     p6_return_void
 }

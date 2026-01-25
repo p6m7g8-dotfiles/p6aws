@@ -65,9 +65,9 @@ p6_aws_svc_ec2_instance_id_from_name_tag() {
         --output text \
         --filters "\"Name=tag:Name,Values=*$name*\"" \
         --query "'Reservations[].Instances[].[LaunchTime,InstanceId]'" |
-        sort -n |
-        awk '{ print $2 }' |
-        tail -1)
+        p6_filter_sort -n |
+        p6_filter_column_pluck 2 |
+        p6_filter_row_last 1)
 
     p6_return_str "$instance_id"
 }

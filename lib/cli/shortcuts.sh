@@ -26,9 +26,8 @@ p6_aws_cli_shortcuts_on() {
 
 			local profile
 			profile=$line
-			profile=$(p6_string_replace "$profile" "\[" "")
-			profile=$(p6_string_replace "$profile" "\]" "")
-			profile=$(p6_string_replace "$profile" "profile " "")
+			profile=$(p6_string_strip_brackets "$profile")
+			profile=$(p6_string_strip_prefix "$profile" "profile ")
 			;;
 		"")
 			p6_aws_profile__debug "util_init(): {end profile}"
@@ -83,7 +82,7 @@ p6_aws_cli_shortcuts_generate_un() {
 	local org="$1"
 
 	local func
-	for func in $(typeset -f | awk '/^[a-z_0-9]+ \(\)/ { print $1 }' | grep "$(p6_aws_shortcuts_prefix \"$org\")"); do
+	for func in $(typeset -f | p6_filter_row_select_regex '^[a-z_0-9]+ \\(\\)' | p6_filter_column_pluck 1 | p6_filter_row_select "$(p6_aws_shortcuts_prefix "$org")"); do
 		p6_env_export_un "$func"
 	done
 }
@@ -124,7 +123,7 @@ p6_aws_shortcuts_profile_to_shell_function_name() {
 	local profile="$1"
 
 	local shell_function_name
-	shell_function_name=$(p6_string_replace "$profile" "/" "_")
+	shell_function_name=$(p6_string_slash_to_underscore "$profile")
 
 	p6_return_str "$shell_function_name"
 }
