@@ -14,7 +14,7 @@ main() {
     p6_test_start "p6_aws_cli_jq_tag_name_get"
     (
         val=$(p6_aws_cli_jq_tag_name_get)
-        if [ "$val" = "Tags[?Key==\`Name\`].Value | [0]" ]; then
+        if p6_string_eq "$val" "Tags[?Key==\`Name\`].Value | [0]"; then
             p6_test_ok "jq tag name"
         else
             p6_test_not_ok "jq tag name"
