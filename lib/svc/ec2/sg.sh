@@ -48,7 +48,7 @@ p6_aws_svc_ec2_sg_show() {
     *) group_name=$security_group_id_or_name ;;
     esac
 
-    if [ -n "$group_name" ]; then
+    if p6_string_blank_NOT "$group_name"; then
         security_group_id=$(p6_aws_svc_ec2_sg_id_from_tag_name "$group_name")
     fi
 
