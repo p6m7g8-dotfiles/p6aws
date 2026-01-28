@@ -22,23 +22,23 @@ p6_aws_cfg_prompt_info() {
     local eks_cluster=$(p6_aws_env_eks_cluster_name"${kind}")
 
     local str
-    if ! p6_string_blank "$org"; then
+    if p6_string_blank_NOT "$org"; then
         str="org:$org"
     fi
-    if ! p6_string_blank "$profile"; then
+    if p6_string_blank_NOT "$profile"; then
         kind=${kind/_/}
         str="$str - ${kind}:$profile"
     fi
-    if ! p6_string_blank "$region"; then
+    if p6_string_blank_NOT "$region"; then
         str="$str region:$region"
     fi
-    if ! p6_string_blank "$aws_env"; then
+    if p6_string_blank_NOT "$aws_env"; then
         str="$str env:$aws_env"
     fi
-    if ! p6_string_blank "$vpc_id"; then
+    if p6_string_blank_NOT "$vpc_id"; then
         str="$str vpc:$vpc_id"
     fi
-    if ! p6_string_blank "$eks_cluster"; then
+    if p6_string_blank_NOT "$eks_cluster"; then
         str="$str eks:$eks_cluster"
     fi
 
