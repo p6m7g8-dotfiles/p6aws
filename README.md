@@ -43,6 +43,8 @@ TODO: Add a short summary of this module.
 
 - `p6_aws_cfg_clear()`
 - `p6_aws_cfg_realize(profile)`
+  - Args:
+    - profile - 
 - `p6_aws_cfg_reset()`
 - `p6_aws_cfg_show()`
 
@@ -57,6 +59,8 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/cfg/vars.sh
 
 - `p6_aws_cfg_vars_filter_secret(val)`
+  - Args:
+    - val - 
 - `words env_vars = p6_aws_cfg_vars()`
 - `words env_vars = p6_aws_cfg_vars_config()`
 - `words env_vars = p6_aws_cfg_vars_min()`
@@ -68,117 +72,299 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/cli/cli.sh
 
 - `p6_aws_cli_cmd(service, cmd, ...)`
+  - Args:
+    - service - 
+    - cmd - 
+    - ... - 
 - `p6_aws_cli_qload(dir)`
+  - Args:
+    - dir - 
 - `str str = p6_aws_cli_jq_tag_name_get()`
 
 ##### p6aws/lib/cli/organizations.sh
 
 - `p6_aws_cli_organization_off(org)`
+  - Args:
+    - org - 
 - `p6_aws_cli_organization_on(org)`
+  - Args:
+    - org - 
 
 ##### p6aws/lib/cli/prompt.sh
 
 - `str str = p6_aws_cfg_prompt_info(kind)`
+  - Args:
+    - kind - 
 
 ##### p6aws/lib/cli/shortcuts.sh
 
 - `p6_aws_cli_shortcuts_generate_un(org)`
+  - Args:
+    - org - 
 - `p6_aws_cli_shortcuts_on(org)`
+  - Args:
+    - org - 
 - `str func = p6_aws_cli_shortcuts_generate_one(profile)`
+  - Args:
+    - profile - 
 - `str prefix = p6_aws_cli_shortcuts_prefix()`
 - `str shell_function_name = p6_aws_shortcuts_profile_to_shell_function_name(profile)`
+  - Args:
+    - profile - 
 
 #### env
 
 ##### p6aws/lib/env/active.sh
 
 - `str old = p6_aws_env_access_key_id_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_ca_bundle_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_codebuild_project_name_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_config_file_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_profile_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_region_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_sso_region_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_sso_start_url_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_eks_cluster_name_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_env_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_env_tag_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_login_default_sso_region_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_metadata_service_num_attempts_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_metadata_service_timeout_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_org_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_output_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_profile_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_region_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_secret_access_key_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_session_token_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_shared_credentials_file_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_account_id_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_account_name_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_region_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_role_name_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_start_url_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_vpc_id_active([val=])`
+  - Args:
+    - OPTIONAL val - []
 
 ##### p6aws/lib/env/saved.sh
 
 - `str old = p6_aws_env_access_key_id_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_ca_bundle_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_codebuild_project_name_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_config_file_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_profile_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_region_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_sso_region_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_sso_start_url_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_eks_cluster_name_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_env_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_env_tag_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_login_default_sso_region_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_metadata_service_num_attempts_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_metadata_service_timeout_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_org_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_output_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_profile_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_region_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_secret_access_key_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_session_token_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_shared_credentials_file_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_account_id_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_account_name_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_region_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_role_name_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_start_url_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_vpc_id_saved([val=])`
+  - Args:
+    - OPTIONAL val - []
 
 ##### p6aws/lib/env/source.sh
 
 - `str old = p6_aws_env_access_key_id_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_ca_bundle_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_codebuild_project_name_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_config_file_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_profile_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_region_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_sso_region_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_default_sso_start_url_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_eks_cluster_name_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_env_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_env_tag_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_login_default_sso_region_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_metadata_service_num_attempts_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_metadata_service_timeout_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_org_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_output_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_profile_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_region_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_secret_access_key_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_session_token_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_shared_credentials_file_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_account_id_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_account_name_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_region_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_role_name_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_sso_start_url_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `str old = p6_aws_env_vpc_id_source([val=])`
+  - Args:
+    - OPTIONAL val - []
 
 #### p6aws
 
@@ -186,31 +372,56 @@ TODO: Add a short summary of this module.
 
 - `p6df::modules::p6aws::deps()`
 - `p6df::modules::p6aws::init(_module, dir)`
+  - Args:
+    - _module - 
+    - dir - 
 
 #### profile
 
 ##### p6aws/lib/profile/config.sh
 
 - `p6_aws_profile_config_add(conf_file, profile)`
+  - Args:
+    - conf_file - 
+    - profile - 
 - `words profiles = p6_aws_profile_config_list()`
 
 ##### p6aws/lib/profile/cred.sh
 
 - `p6_aws_profile_cred_add(cred_file, profile, access_key_id, secret_access_key, session_token, expiration)`
+  - Args:
+    - cred_file - 
+    - profile - 
+    - access_key_id - 
+    - secret_access_key - 
+    - session_token - 
+    - expiration - 
 
 #### svc/autoscaling
 
 ##### p6aws/lib/svc/autoscaling/_lc.sh
 
 - `p6_old_aws_svc_autoscaling_asg_load_balancer_names(asg_name, load_balancer_names)`
+  - Args:
+    - asg_name - 
+    - load_balancer_names - 
 - `p6_old_aws_svc_autoscaling_lc_user_data_show(lc_name)`
+  - Args:
+    - lc_name - 
 - `p6_old_aws_svc_autoscaling_lcs_list()`
 
 ##### p6aws/lib/svc/autoscaling/asg.sh
 
 - `p6_aws_svc_autoscaling_asg_act_detailed_list(asg_name)`
+  - Args:
+    - asg_name - 
 - `p6_aws_svc_autoscaling_asg_act_list(asg_name)`
+  - Args:
+    - asg_name - 
 - `p6_aws_svc_autoscaling_asg_target_group_arn(asg_name, target_group_arn)`
+  - Args:
+    - asg_name - 
+    - target_group_arn - 
 - `p6_aws_svc_autoscaling_asgs_list()`
 
 #### svc/billingconductor
@@ -236,29 +447,41 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/cloudtrail/trail.sh
 
 - `stream  = p6_aws_svc_cloudtrail_trail_arns([prefix=.])`
+  - Args:
+    - OPTIONAL prefix - [.]
 
 #### svc/cloudwatch
 
 ##### p6aws/lib/svc/cloudwatch/lambda.sh
 
 - `p6_aws_svc_logs_lambda_watch_jq(log_group_name)`
+  - Args:
+    - log_group_name - 
 
 ##### p6aws/lib/svc/cloudwatch/logs.sh
 
 - `p6_aws_svc_logs_groups_list()`
 - `p6_aws_svc_logs_watch(log_group_name)`
+  - Args:
+    - log_group_name - 
 
 ##### p6aws/lib/svc/cloudwatch/trail.sh
 
 - `p6_aws_svc_logs_trail_watch_jq(log_group_name)`
+  - Args:
+    - log_group_name - 
 
 #### svc/codebuild
 
 ##### p6aws/lib/svc/codebuild/build.sh
 
 - `p6_aws_codebuild_build_get(build_id)`
+  - Args:
+    - build_id - 
 - `p6_aws_svc_codebuild_builds_list()`
 - `p6_aws_svc_codebuild_project_build_list(project_name)`
+  - Args:
+    - project_name - 
 - `p6_aws_svc_codebuild_projects_list()`
 
 #### svc/codepipeline
@@ -272,7 +495,11 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/dynamodb/table.sh
 
 - `p6_aws_svc_dynamodb_table_all(table_name)`
+  - Args:
+    - table_name - 
 - `p6_aws_svc_dynamodb_table_describe(table_name)`
+  - Args:
+    - table_name - 
 - `p6_aws_svc_dynamodb_tables_list()`
 
 #### svc/ec2
@@ -282,21 +509,43 @@ TODO: Add a short summary of this module.
 - `str ami_id = p6_aws_svc_ec2_ami_find_amazon2_latest()`
 - `str ami_id = p6_aws_svc_ec2_ami_find_freebsd_15_current()`
 - `str ami_id = p6_aws_svc_ec2_ami_find_id(glob)`
+  - Args:
+    - glob - 
 - `str ami_id = p6_aws_svc_ec2_ami_id_from_instance_id(instance_id)`
+  - Args:
+    - instance_id - 
 - `str ami_name = p6_aws_svc_ec2_ami_name_from_instance_id(instance_id)`
+  - Args:
+    - instance_id - 
 - `str user = p6_aws_svc_ec2_user_from_ami_name(ami_name)`
+  - Args:
+    - ami_name - 
 - `stream  = p6_aws_svc_ec2_ami_show(ami_id)`
+  - Args:
+    - ami_id - 
 - `stream  = p6_aws_svc_ec2_amis_list()`
 - `stream  = p6_aws_svc_ec2_amis_mine_list()`
 
 ##### p6aws/lib/svc/ec2/instance.sh
 
 - `str az = p6_aws_svc_ec2_availability_zone(instance_id)`
+  - Args:
+    - instance_id - 
 - `str instance_id = p6_aws_svc_ec2_instance_id_from_name_tag(name)`
+  - Args:
+    - name - 
 - `str private_ip = p6_aws_svc_ec2_instance_private_ip(instance_id)`
+  - Args:
+    - instance_id - 
 - `str public_ip = p6_aws_svc_ec2_instance_public_ip(instance_id)`
+  - Args:
+    - instance_id - 
 - `stream  = p6_aws_svc_ec2_instance_show(instance_id)`
+  - Args:
+    - instance_id - 
 - `stream  = p6_aws_svc_ec2_instances_list(vpc_id)`
+  - Args:
+    - vpc_id - 
 
 ##### p6aws/lib/svc/ec2/lt.sh
 
@@ -305,10 +554,14 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/ec2/nat.sh
 
 - `p6_aws_svc_ec2_nat_gateway_show(vpc_id)`
+  - Args:
+    - vpc_id - 
 
 ##### p6aws/lib/svc/ec2/network.sh
 
 - `p6_aws_svc_ec2_network_int_list(vpc_id)`
+  - Args:
+    - vpc_id - 
 
 ##### p6aws/lib/svc/ec2/region.sh
 
@@ -318,27 +571,58 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/ec2/rtb.sh
 
 - `p6_aws_svc_ec2_rtb_show(rtb_id, vpc_id)`
+  - Args:
+    - rtb_id - 
+    - vpc_id - 
 - `p6_aws_svc_ec2_rtbs_list(vpc_id)`
+  - Args:
+    - vpc_id - 
 
 ##### p6aws/lib/svc/ec2/sg.sh
 
 - `p6_aws_svc_ec2_sg_show(security_group_id_or_name, vpc_id)`
+  - Args:
+    - security_group_id_or_name - 
+    - vpc_id - 
 - `str sg_id = p6_aws_svc_ec2_sg_id_from_instance_id(instance_id)`
+  - Args:
+    - instance_id - 
 - `str sg_id = p6_aws_svc_ec2_sg_id_from_instance_tag(tag)`
+  - Args:
+    - tag - 
 - `str sg_id = p6_aws_svc_ec2_sg_id_from_sg_tag(tag_name, vpc_id)`
+  - Args:
+    - tag_name - 
+    - vpc_id - 
 - `stream  = p6_aws_svc_ec2_sgs_list(vpc_id)`
+  - Args:
+    - vpc_id - 
 
 ##### p6aws/lib/svc/ec2/subnet.sh
 
 - `p6_aws_svc_ec2_subnet_get(subnet_type, vpc_id)`
+  - Args:
+    - subnet_type - 
+    - vpc_id - 
 - `p6_aws_svc_ec2_subnets_list(vpc_id)`
+  - Args:
+    - vpc_id - 
 - `words subnet_ids = p6_aws_svc_ec2_subnet_ids_get(subnet_type, vpc_id)`
+  - Args:
+    - subnet_type - 
+    - vpc_id - 
 
 ##### p6aws/lib/svc/ec2/tgw.sh
 
 - `p6_aws_svc_ec2_tgw_attachments_list(tgw_id)`
+  - Args:
+    - tgw_id - 
 - `p6_aws_svc_ec2_tgw_routes_list(tgw_id)`
+  - Args:
+    - tgw_id - 
 - `p6_aws_svc_ec2_tgw_show(tgw_id)`
+  - Args:
+    - tgw_id - 
 - `p6_aws_svc_ec2_tgws_list()`
 
 ##### p6aws/lib/svc/ec2/volume.sh
@@ -349,20 +633,30 @@ TODO: Add a short summary of this module.
 
 - `p6_aws_svc_ec2_vpcs_list()`
 - `str vpc_id = p6_aws_svc_ec2_vpc_id_from_vpc_name(vpc_name)`
+  - Args:
+    - vpc_name - 
 
 #### svc/eks
 
 ##### p6aws/lib/svc/eks/cluster.sh
 
 - `p6_aws_svc_eks_cluster_update_kubeconfig(cluster_name)`
+  - Args:
+    - cluster_name - 
 - `str cluster_name = p6_aws_svc_eks_cluster_find(glob)`
+  - Args:
+    - glob - 
 - `str cluster_status = p6_aws_svc_eks_cluster_status(cluster_name)`
+  - Args:
+    - cluster_name - 
 
 #### svc/elb
 
 ##### p6aws/lib/svc/elb/main.sh
 
 - `p6_aws_svc_ec2_elb_listeners_list(load_balancer_name)`
+  - Args:
+    - load_balancer_name - 
 - `p6_aws_svc_elb_list()`
 
 #### svc/elbv2
@@ -371,6 +665,8 @@ TODO: Add a short summary of this module.
 
 - `p6_aws_svc_alb_list()`
 - `p6_aws_svc_alb_listeners_list(load_balancer_name)`
+  - Args:
+    - load_balancer_name - 
 
 #### svc/glue
 
@@ -407,13 +703,25 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/iam/policy.sh
 
 - `p6_aws_svc_iam_policy_cloudtrail_write(resource)`
+  - Args:
+    - resource - 
 - `p6_aws_svc_iam_policy_s3_cloudtrail_write(trail_bucket, account_id)`
+  - Args:
+    - trail_bucket - 
+    - account_id - 
 - `p6_aws_svc_iam_policy_saml(account_id, provider)`
+  - Args:
+    - account_id - 
+    - provider - 
 - `p6_aws_svc_iam_policy_service_write(service)`
+  - Args:
+    - service - 
 
 ##### p6aws/lib/svc/iam/role.sh
 
 - `p6_aws_svc_iam_role_policies(role_name)`
+  - Args:
+    - role_name - 
 - `stream  = p6_aws_svc_iam_roles_list()`
 
 ##### p6aws/lib/svc/iam/user.sh
@@ -459,8 +767,12 @@ TODO: Add a short summary of this module.
 
 - `aws_account_id account_id = p6_aws_svc_organization_management_account_id_get()`
 - `aws_account_id new_account_id = p6_aws_svc_organizations_account_id_from_account_name(account_name)`
+  - Args:
+    - account_name - 
 - `str account_name = p6_aws_svc_organization_management_account_name_get()`
 - `str account_name = p6_aws_svc_organizations_account_name_from_account_id(account_id)`
+  - Args:
+    - account_id - 
 - `stream  = p6_aws_svc_organizations_accounts_list()`
 - `stream  = p6_aws_svc_organizations_accounts_list_active()`
 - `words account_ids = p6_aws_svc_organizations_account_list_active_ids_without_management()`
@@ -471,6 +783,8 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/organizations/lz.sh
 
 - `p6_aws_svc_organizations_lz_do(...)`
+  - Args:
+    - ... - 
 
 ##### p6aws/lib/svc/organizations/organization.sh
 
@@ -481,11 +795,20 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/organizations/sts.sh
 
 - `p6_aws_svc_organizations_sts_github_su(account_name_or_account_id)`
+  - Args:
+    - account_name_or_account_id - 
 - `p6_aws_svc_organizations_sts_github_su_un()`
 - `p6_aws_svc_organizations_sts_local_su(account_name_or_account_id)`
+  - Args:
+    - account_name_or_account_id - 
 - `p6_aws_svc_organizations_sts_local_su_un()`
 - `p6_aws_svc_organizations_sts_run_as(account_name_or_account_id, ...)`
+  - Args:
+    - account_name_or_account_id - 
+    - ... - 
 - `p6_aws_svc_organizations_sts_su(account_name_or_account_id)`
+  - Args:
+    - account_name_or_account_id - 
 - `p6_aws_svc_organizations_sts_su_un()`
 
 #### svc/rds
@@ -494,16 +817,24 @@ TODO: Add a short summary of this module.
 
 - `p6_aws_svc_rds_instance_arns_list()`
 - `p6_aws_svc_rds_pgpassword_from_iam_get(host, username, port)`
+  - Args:
+    - host - 
+    - username - 
+    - port - 
 
 #### svc/route53
 
 ##### p6aws/lib/svc/route53/resources.sh
 
 - `p6_aws_svc_route53_resources_list(zone)`
+  - Args:
+    - zone - 
 
 ##### p6aws/lib/svc/route53/zones.sh
 
 - `p6_aws_svc_route53_zones_hosted_id_from_zone(zone)`
+  - Args:
+    - zone - 
 - `p6_aws_svc_route53_zones_hosted_list()`
 
 #### svc/route53domains
@@ -511,30 +842,52 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/route53domains/domain.sh
 
 - `p6_aws_svc_route53_domains_details(domain_name, ...)`
+  - Args:
+    - domain_name - 
+    - ... - 
 - `p6_aws_svc_route53_domains_list()`
+  - Synopsis: This command runs only in the us-east-1 Region. If your default region is set to us-east-1, you can omit the region parameter.
 - `p6_aws_svc_route53_domains_list_not_autorenew()`
 - `p6_aws_svc_route53_domains_list_not_locked()`
 - `p6_aws_svc_route53_domains_nameservers_api(domain_name)`
+  - Args:
+    - domain_name - 
 - `p6_aws_svc_route53_domains_nameservers_delta(domain_name)`
+  - Args:
+    - domain_name - 
 - `p6_aws_svc_route53_domains_nameservers_whois(domain_name)`
+  - Args:
+    - domain_name - 
 
 #### svc/s3
 
 ##### p6aws/lib/svc/s3/bucket.sh
 
 - `p6_aws_svc_s3_bucket_list(bucket)`
+  - Args:
+    - bucket - 
 - `p6_aws_svc_s3_bucket_policy()`
 - `p6_aws_svc_s3_buckets_list()`
 - `str bucket_name = p6_aws_svc_s3_bucket_find_prefix(prefix)`
+  - Args:
+    - prefix - 
 
 #### svc/s3api
 
 ##### p6aws/lib/svc/s3api/bucket.sh
 
 - `p6_aws_svc_s3api_bucket_list_objects_all(bucket)`
+  - Args:
+    - bucket - 
 - `p6_aws_svc_s3api_bucket_objects_deleted(bucket)`
+  - Args:
+    - bucket - 
 - `p6_aws_svc_s3api_bucket_objects_versions_list(bucket)`
+  - Args:
+    - bucket - 
 - `p6_aws_svc_s3api_bucket_policy(bucket)`
+  - Args:
+    - bucket - 
 
 #### svc/secretsmanager
 
@@ -542,6 +895,8 @@ TODO: Add a short summary of this module.
 
 - `p6_aws_svc_secretsmanager_list()`
 - `p6_aws_svc_secretsmanager_secret_get(name)`
+  - Args:
+    - name - 
 
 #### svc/securityhub
 
@@ -569,6 +924,9 @@ TODO: Add a short summary of this module.
 
 - `p6_aws_svc_stepfunctions_list()`
 - `p6_aws_svc_stepfunctions_state_machine_show(state_machine, ...)`
+  - Args:
+    - state_machine - 
+    - ... - 
 
 #### svc/sts
 
@@ -580,47 +938,92 @@ TODO: Add a short summary of this module.
 ##### p6aws/lib/svc/sts/decode.sh
 
 - `stream  = p6_aws_svc_sts_decode_msg(encoded)`
+  - Args:
+    - encoded - 
 
 ##### p6aws/lib/svc/sts/identity.sh
 
 - `p6_aws_svc_sts_identity_broker_custom_login_url(cred_file)`
+  - Args:
+    - cred_file - 
 - `stream  = p6_aws_svc_sts_whoami()`
 
 ##### p6aws/lib/svc/sts/prompt.sh
 
 - `str str = p6_aws_sts_prompt_info(creds)`
+  - Args:
+    - creds - 
 
 ##### p6aws/lib/svc/sts/role.sh
 
 - `p6_aws_svc_sts_role_assume(role_arn, role_session_name)`
+  - Args:
+    - role_arn - 
+    - role_session_name - 
 - `p6_aws_svc_sts_role_assume_un()`
 - `p6_aws_svc_sts_role_credentials_on(json, role_arn, role_session_name, type)`
+  - Args:
+    - json - 
+    - role_arn - aka profile
+    - role_session_name - 
+    - type - 
 - `p6_aws_svc_sts_role_federation_assume(profile)`
+  - Args:
+    - profile - 
 
 #### util
 
 ##### p6aws/lib/util/env.sh
 
 - `p6_aws_util_env_org([val=$P6_AWS_ORG])`
+  - Args:
+    - OPTIONAL val - [$P6_AWS_ORG]
 - `p6_aws_util_env_output([val=json])`
+  - Args:
+    - OPTIONAL val - [json]
 - `p6_aws_util_env_profile([val=])`
+  - Args:
+    - OPTIONAL val - []
 - `p6_aws_util_env_region([val=us-east-1])`
+  - Args:
+    - OPTIONAL val - [us-east-1]
 - `str config_file = p6_aws_util_env_config_file([org=])`
+  - Args:
+    - OPTIONAL org - []
 - `str cred_file = p6_aws_util_env_shared_credentials_file([org=])`
+  - Args:
+    - OPTIONAL org - []
 
 ##### p6aws/lib/util/p6_return.sh
 
 - `aws_account_id  = p6_return_aws_account_id(account_id)`
+  - Args:
+    - account_id - 
 - `aws_arn  = p6_return_aws_arn(arn)`
+  - Args:
+    - arn - 
 - `aws_logical_id  = p6_return_aws_logical_id(logical_id)`
+  - Args:
+    - logical_id - 
 - `aws_resource_id  = p6_return_aws_resource_id(resource_id)`
+  - Args:
+    - resource_id - 
 - `str organization_id = p6_return_aws_organization_id(organization_id)`
+  - Args:
+    - organization_id - 
 - `str profile = p6_return_aws_profile(profile)`
+  - Args:
+    - profile - 
 - `str subnet_id = p6_return_aws_subnet_id(subnet_id)`
+  - Args:
+    - subnet_id - 
 
 ##### p6aws/lib/util/template.sh
 
 - `p6_aws_template_process(infile, ...)`
+  - Args:
+    - infile - 
+    - ... - 
 
 ## Hierarchy
 
