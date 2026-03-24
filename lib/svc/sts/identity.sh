@@ -49,24 +49,24 @@ p6_aws_svc_sts_identity_broker_custom_login_url() {
 
     # url encode str
     local session
-    session=$(echo "$str" | jq -sRr @uri)
+    session=$(p6_echo "$str" | p6_json_eval -sRr @uri)
 
     # getSigninToken request
     local response
-    response=$(curl -s "$federation_endpoint?Action=getSigninToken&SessionDuration=1800&Session=$session")
+    response=$(p6_curl -s "$federation_endpoint?Action=getSigninToken&SessionDuration=1800&Session=$session")
 
     # grab SigninToken
     local signin_token
-    signin_token=$(echo "$response" | jq -r ".SigninToken")
+    signin_token=$(p6_echo "$response" | p6_json_eval -r ".SigninToken")
 
     # login request
     local destination
     local issuer
-    destination=$(echo "$console_endpoint" | jq -Rr @uri)
-    issuer=$(echo "p6cli" | jq -rR @uri)
+    destination=$(p6_echo "$console_endpoint" | p6_json_eval -Rr @uri)
+    issuer=$(p6_echo "p6cli" | p6_json_eval -rR @uri)
 
     local login_url
     login_url="$federation_endpoint?Action=login&Issuer=$issuer&Destination=$destination&SigninToken=$signin_token"
 
-    echo "$login_url"
+    p6_echo "$login_url"
 }

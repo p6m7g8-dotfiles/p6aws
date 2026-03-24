@@ -106,5 +106,5 @@ p6_aws_svc_route53_domains_nameservers_delta() {
     p6_aws_svc_route53_domains_nameservers_whois "$domain_name" >/tmp/p6-2
 
     diff -u /tmp/p6-1 /tmp/p6-2
-    rm -f /tmp/p6-1 /tmp/p6-2
+    p6_file_rmf "/tmp/p6-1"; p6_file_rmf "/tmp/p6-2"
 }

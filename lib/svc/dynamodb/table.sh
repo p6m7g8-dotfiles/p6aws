@@ -9,7 +9,7 @@ p6_aws_svc_dynamodb_tables_list() {
 
   p6_aws_cli_cmd dynamodb list-tables \
     --query "'TableNames[]'" | \
-    jq -r ".[]"
+    p6_json_eval -r ".[]"
 }
 
 ######################################################################
@@ -47,5 +47,5 @@ p6_aws_svc_dynamodb_table_all() {
   p6_aws_cli_cmd dynamodb scan \
     --table-name "$table_name" \
     --query "'Items[]'" |
-    jq -c '.[]'
+    p6_json_eval -c '.[]'
 }
