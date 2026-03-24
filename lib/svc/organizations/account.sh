@@ -64,7 +64,7 @@ p6_aws_svc_organizations_accounts_list_active_ids() {
 ######################################################################
 p6_aws_svc_organizations_accounts_list_active_ids_as_list() {
 
-  local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | xargs)
+  local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | p6_filter_join_words)
 
   p6_return_words "$account_ids"
 }
@@ -82,7 +82,7 @@ p6_aws_svc_organizations_accounts_list_active_ids_as_list() {
 p6_aws_svc_organizations_account_list_active_ids_without_management() {
 
   local management_account_id=$(p6_aws_svc_organization_management_account_id_get)
-  local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | p6_filter_row_exclude "$management_account_id" | xargs)
+  local account_ids=$(p6_aws_svc_organizations_accounts_list_active_ids | p6_filter_row_exclude "$management_account_id" | p6_filter_join_words)
 
   p6_return_words "$account_ids"
 }

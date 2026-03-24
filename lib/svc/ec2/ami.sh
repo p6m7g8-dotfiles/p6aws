@@ -145,7 +145,7 @@ p6_aws_svc_ec2_ami_find_id() {
 		--filters "Name=name,Values=$glob" \
 		--query "Images[*].[Name,ImageId]" |
 		p6_filter_sort_by_column 1 |
-		tail -1 |
+		p6_filter_row_last 1 |
 		p6_filter_extract_after "ami-" | p6_filter_translate_start_to_arg "ami-"
 	)
 
@@ -186,7 +186,7 @@ p6_aws_svc_ec2_ami_find_amazon2_latest() {
 		--query "'Images[].[ImageId]'" \
 		--filters "'Name=name,Values=amzn2-ami-hvm-*gp2'" |
 		p6_filter_sort_reverse_by_column 1 |
-		tail -1)
+		p6_filter_row_last 1)
 
 	p6_return_str "$ami_id"
 }

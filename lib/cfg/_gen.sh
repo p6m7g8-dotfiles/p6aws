@@ -8,8 +8,8 @@
 p6_aws_cfg__generate() {
 
     local var
-    rm -f lib/env/*.sh
-    rm -f t/cfg-*.t
+    p6_file_rmf "lib/env/*.sh"
+    p6_file_rmf "t/cfg-*.t"
 
     for var in $(p6_aws_cfg_vars | p6_filter_sort); do
         local var_norm=$(p6_string_lc "$var")
