@@ -77,10 +77,10 @@ p6_aws_svc_sts_role_credentials_on() {
     name="$org-$type"
 
     # Parse
-    access_key_id=$(p6_json_eval "$json" "-r" ".Credentials.AccessKeyId")
-    secret_access_key=$(p6_json_eval "$json" "-r" ".Credentials.SecretAccessKey")
-    session_token=$(p6_json_eval "$json" "-r" ".Credentials.SessionToken")
-    expiration=$(p6_json_eval "$json" "-r" ".Credentials.Expiration")
+    access_key_id=$(p6_echo "$json" | p6_json_eval -r ".Credentials.AccessKeyId")
+    secret_access_key=$(p6_echo "$json" | p6_json_eval -r ".Credentials.SecretAccessKey")
+    session_token=$(p6_echo "$json" | p6_json_eval -r ".Credentials.SessionToken")
+    expiration=$(p6_echo "$json" | p6_json_eval -r ".Credentials.Expiration")
 
     # Mock the New Env
     p6_aws_cfg_save_source

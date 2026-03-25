@@ -131,9 +131,9 @@ p6_aws_svc_organizations_sts_github_su() {
   new_arn="arn:aws:iam::${account_id}:role/OrganizationAccountAccessRole"
 
   local json=$(p6_aws_cli_cmd sts assume-role --role-arn "$new_arn" --role-session-name "$role_session_name")
-  local access_key_id=$(p6_json_eval "$json" "-r" ".Credentials.AccessKeyId")
-  local secret_access_key=$(p6_json_eval "$json" "-r" ".Credentials.SecretAccessKey")
-  local session_token=$(p6_json_eval "$json" "-r" ".Credentials.SessionToken")
+  local access_key_id=$(p6_echo "$json" | p6_json_eval -r ".Credentials.AccessKeyId")
+  local secret_access_key=$(p6_echo "$json" | p6_json_eval -r ".Credentials.SecretAccessKey")
+  local session_token=$(p6_echo "$json" | p6_json_eval -r ".Credentials.SessionToken")
 
   export PRIOR_AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
   export PRIOR_AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
