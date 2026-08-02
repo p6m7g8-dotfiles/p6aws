@@ -1265,13 +1265,11 @@ TODO: Add a short summary of this module.
     │   ├── s3_cloudtrail.json
     │   ├── saml.json
     │   └── service.json
-    ├── jc
-    │   └── auth.json
     └── sts
         ├── conf
         └── cred
 
-46 directories, 196 files
+45 directories, 195 files
 ```
 
 ## Author
