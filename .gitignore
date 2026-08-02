@@ -1,0 +1,4 @@
+# Orphaned JumpCloud auth template: no code references it, and its
+# "password": "PASSWORD" placeholder trips detect-secrets' keyword detector.
+# JSON cannot carry an allowlist pragma.
+tmpl/jc/
