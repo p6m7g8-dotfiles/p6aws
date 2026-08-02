@@ -33,7 +33,7 @@ main() {
         p6_aws_env_org_active "acme" >/dev/null
         p6_aws_env_region_source "us-east-1" >/dev/null
 
-        json='{"Credentials":{"AccessKeyId":"AKIA123","SecretAccessKey":"SECRET","SessionToken":"TOKEN","Expiration":"2024-01-01T00:00:00Z"}}'
+        json='{"Credentials":{"AccessKeyId":"AKIA123","SecretAccessKey":"SECRET","SessionToken":"TOKEN","Expiration":"2024-01-01T00:00:00Z"}}'  # pragma: allowlist secret
         p6_aws_svc_sts_role_credentials_on "$json" "role-arn" "session" "sts"
 
         p6_test_assert_file_exists "$HOME/.aws/config-acme-sts" "config created"
@@ -71,10 +71,10 @@ main() {
     p6_test_start "p6_aws_svc_organizations_sts_github_su_un"
     (
         export AWS_ACCESS_KEY_ID="CURR"
-        export AWS_SECRET_ACCESS_KEY="CURR_SECRET"
+        export AWS_SECRET_ACCESS_KEY="CURR_SECRET"  # pragma: allowlist secret
         export AWS_SESSION_TOKEN="CURR_TOKEN"
         export PRIOR_AWS_ACCESS_KEY_ID="PRIOR"
-        export PRIOR_AWS_SECRET_ACCESS_KEY="PRIOR_SECRET"
+        export PRIOR_AWS_SECRET_ACCESS_KEY="PRIOR_SECRET"  # pragma: allowlist secret
         export PRIOR_AWS_SESSION_TOKEN="PRIOR_TOKEN"
 
         p6_aws_svc_organizations_sts_github_su_un
@@ -87,10 +87,10 @@ main() {
     (
         export GITHUB_ACTIONS="true"
         export AWS_ACCESS_KEY_ID="CURR2"
-        export AWS_SECRET_ACCESS_KEY="CURR2_SECRET"
+        export AWS_SECRET_ACCESS_KEY="CURR2_SECRET"  # pragma: allowlist secret
         export AWS_SESSION_TOKEN="CURR2_TOKEN"
         export PRIOR_AWS_ACCESS_KEY_ID="PRIOR2"
-        export PRIOR_AWS_SECRET_ACCESS_KEY="PRIOR2_SECRET"
+        export PRIOR_AWS_SECRET_ACCESS_KEY="PRIOR2_SECRET"  # pragma: allowlist secret
         export PRIOR_AWS_SESSION_TOKEN="PRIOR2_TOKEN"
 
         p6_aws_svc_organizations_sts_su_un

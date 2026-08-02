@@ -30,7 +30,7 @@ main() {
         p6_test_assert_eq "$?" "0" "saml policy substitutes"
 
         out=$(p6_aws_svc_iam_policy_s3_cloudtrail_write "trail-bucket" "123456789012")
-        echo "$out" | grep -q "trail-bucket/AWSLogs/123456789012" >/dev/null
+        echo "$out" | grep -q "trail-bucket/AWSLogs/123456789012" >/dev/null  # pragma: allowlist secret
         p6_test_assert_eq "$?" "0" "s3_cloudtrail policy substitutes"
 
         out=$(p6_aws_svc_iam_policy_cloudtrail_write "arn:aws:logs:us-east-1:123:log-group")
